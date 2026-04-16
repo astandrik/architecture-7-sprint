@@ -11,14 +11,21 @@ from langchain_community.llms.ollama import OllamaEndpointNotFoundError
 from langchain_community.vectorstores import FAISS
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, SystemMessage
 
-from task3_indexing import DEFAULT_EMBEDDING_MODEL, create_embeddings, load_index, strip_chunk_prefix
+from task3_indexing import (
+    DEFAULT_EMBEDDING_MODEL,
+    create_embeddings,
+    infer_retrieval_quality,
+    load_index,
+    strip_chunk_prefix,
+)
 
 
 DEFAULT_OLLAMA_MODEL = "qwen2.5:7b-instruct"
 DEFAULT_OLLAMA_BASE_URL = "http://localhost:11434"
-DEFAULT_TOP_K = 4
+DEFAULT_TOP_K = 5
 DEFAULT_MAX_CONTEXT_CHUNKS = 3
 DEFAULT_SCORE_THRESHOLD = 1.45
+WEAK_SUPPORT_SCORE_THRESHOLD = 1.0
 DEFAULT_TEMPERATURE = 0.1
 DEFAULT_NUM_CTX = 4096
 DEFAULT_NUM_PREDICT = 350
@@ -27,6 +34,78 @@ MAX_QUERY_LENGTH = 1000
 MIN_SANITIZED_WORDS = 4
 MIN_SANITIZED_CHARACTERS = 24
 TRACE_PREVIEW_LIMIT = 120
+TITLE_TOKEN_PATTERN = re.compile(r"[A-Za-zА-Яа-яЁё][A-Za-zА-Яа-яЁё'-]*")
+LEADING_QUESTION_WORDS = frozenset(
+    {
+        "what",
+        "who",
+        "which",
+        "where",
+        "when",
+        "why",
+        "how",
+        "как",
+        "кто",
+        "что",
+        "где",
+        "когда",
+        "какого",
+        "какая",
+        "какие",
+        "сколько",
+    }
+)
+QUERY_STOPWORDS = frozenset(
+    {
+        "a",
+        "an",
+        "and",
+        "are",
+        "at",
+        "by",
+        "do",
+        "does",
+        "did",
+        "during",
+        "for",
+        "from",
+        "how",
+        "in",
+        "is",
+        "kind",
+        "of",
+        "on",
+        "the",
+        "to",
+        "was",
+        "were",
+        "what",
+        "when",
+        "where",
+        "which",
+        "who",
+        "why",
+        "во",
+        "в",
+        "во",
+        "во время",
+        "во_время",
+        "и",
+        "как",
+        "какая",
+        "какие",
+        "какого",
+        "когда",
+        "кто",
+        "на",
+        "о",
+        "по",
+        "с",
+        "сколько",
+        "что",
+        "это",
+    }
+)
 
 QuestionLanguage = Literal["ru", "en"]
 ProtectionMode = Literal["none", "preprompt", "sanitize", "postfilter", "full"]
@@ -58,8 +137,14 @@ NO_ANSWER_PATTERNS: tuple[re.Pattern[str], ...] = (
     re.compile(r"\bi don't know\b", re.IGNORECASE),
     re.compile(r"\bнет (?:достаточной )?информац", re.IGNORECASE),
     re.compile(r"\bв (?:этом|данном) контексте нет\b", re.IGNORECASE),
+    re.compile(r"\bинформац\w*\b.*\bнет\b.*\bконтекст\w*\b", re.IGNORECASE),
+    re.compile(r"\bконтекст\w*\b.*\bне содержит\b.*\bинформац\w*\b", re.IGNORECASE),
+    re.compile(r"\b(?:не могу|нельзя|невозможно)\b.*\bответить\b", re.IGNORECASE),
+    re.compile(r"\bна основе переданного контекста\b.*\b(?:не могу|нельзя|невозможно)\b.*\bответить\b", re.IGNORECASE),
     re.compile(r"\bno (?:relevant|enough )?information\b", re.IGNORECASE),
     re.compile(r"\bnot enough information\b", re.IGNORECASE),
+    re.compile(r"\b(?:cannot|can't|unable to)\s+answer\b", re.IGNORECASE),
+    re.compile(r"\bbased on (?:the )?(?:provided|given) context\b.*\b(?:cannot|can't|unable to)\s+answer\b", re.IGNORECASE),
     re.compile(r"\bnot (?:present|available) in (?:the )?context\b", re.IGNORECASE),
 )
 
@@ -190,6 +275,8 @@ class RetrievedHit:
     title: str
     section: str
     text: str
+    retrieval_quality: str = "content"
+    related_entities: tuple[str, ...] = ()
 
     @property
     def source_label(self) -> str:
@@ -253,13 +340,36 @@ class RagBot:
             raise ValueError(f"Question must not exceed {MAX_QUERY_LENGTH} characters.")
 
         retrieved_hits = retrieve_hits(self.index, normalized_question, self.config.top_k)
+        query_title_tokens = extract_query_title_tokens(normalized_question)
+        query_support_tokens = extract_query_support_tokens(normalized_question, query_title_tokens)
         selection_result = prepare_context_hits(
+            question=normalized_question,
             retrieved_hits=retrieved_hits,
             max_context_chunks=self.config.max_context_chunks,
             score_threshold=self.config.score_threshold,
             protection_mode=self.config.protection_mode,
         )
         selected_hits = list(selection_result.selected_hits)
+        if not selected_hits and should_retry_definition_query(
+            query_title_tokens=query_title_tokens,
+            query_support_tokens=query_support_tokens,
+            retrieved_hits=retrieved_hits,
+        ):
+            expanded_query = build_definition_expansion_query(
+                question=normalized_question,
+                query_title_tokens=query_title_tokens,
+                retrieved_hits=retrieved_hits,
+            )
+            if expanded_query is not None:
+                expanded_hits = retrieve_hits(self.index, expanded_query, max(self.config.top_k, 8))
+                selection_result = prepare_context_hits(
+                    question=normalized_question,
+                    retrieved_hits=expanded_hits,
+                    max_context_chunks=self.config.max_context_chunks,
+                    score_threshold=self.config.score_threshold,
+                    protection_mode=self.config.protection_mode,
+                )
+                selected_hits = list(selection_result.selected_hits)
         if not selected_hits:
             return build_fallback_answer(
                 normalized_question,
@@ -425,6 +535,8 @@ def retrieve_hits(index: FAISS, question: str, top_k: int) -> list[RetrievedHit]
     raw_matches = index.similarity_search_with_score(question, k=top_k)
     for rank, (document, score) in enumerate(raw_matches, start=1):
         metadata = document.metadata
+        stripped_text = strip_chunk_prefix(document.page_content)
+        section = str(metadata["section"])
         retrieved_hits.append(
             RetrievedHit(
                 rank=rank,
@@ -432,14 +544,17 @@ def retrieve_hits(index: FAISS, question: str, top_k: int) -> list[RetrievedHit]
                 chunk_id=str(metadata["chunk_id"]),
                 source_path=str(metadata["source_path"]),
                 title=str(metadata["title"]),
-                section=str(metadata["section"]),
-                text=strip_chunk_prefix(document.page_content),
+                section=section,
+                retrieval_quality=str(metadata.get("retrieval_quality") or infer_retrieval_quality(section, stripped_text)),
+                text=stripped_text,
+                related_entities=tuple(str(item) for item in metadata.get("related_entities", [])),
             )
         )
     return retrieved_hits
 
 
 def prepare_context_hits(
+    question: str,
     retrieved_hits: list[RetrievedHit],
     max_context_chunks: int,
     score_threshold: float,
@@ -490,6 +605,7 @@ def prepare_context_hits(
     candidates: list[tuple[RetrievedHit, tuple[str, ...], tuple[str, ...]]] = []
     saw_postfilter_drop = False
     saw_sanitize_drop = False
+    saw_quality_drop = False
 
     for hit in retrieved_hits:
         matched_markers = tuple(find_injection_markers(hit.text))
@@ -547,12 +663,30 @@ def prepare_context_hits(
                     continue
                 candidate_hit = replace(hit, text=sanitized_text)
 
+        if candidate_hit.retrieval_quality != "content":
+            saw_quality_drop = True
+            hit_traces.append(
+                HitProtectionTrace(
+                    rank=hit.rank,
+                    source_label=hit.source_label,
+                    score=hit.score,
+                    matched_markers=matched_markers,
+                    sanitized_markers=sanitized_markers,
+                    action="quality_filtered",
+                    text_preview=build_trace_preview(candidate_hit.text),
+                    reason=f"chunk retrieval_quality={candidate_hit.retrieval_quality}",
+                )
+            )
+            continue
+
         candidates.append((candidate_hit, matched_markers, sanitized_markers))
 
     if not candidates:
         filter_reason = "all_candidate_chunks_filtered"
         if saw_sanitize_drop and not saw_postfilter_drop:
             filter_reason = "all_candidate_chunks_removed_by_sanitize"
+        elif saw_quality_drop and not saw_postfilter_drop and not saw_sanitize_drop:
+            filter_reason = "all_candidate_chunks_removed_by_quality_filter"
         return SelectionResult(
             selected_hits=(),
             protection_trace=ProtectionTrace(
@@ -565,10 +699,22 @@ def prepare_context_hits(
             ),
         )
 
-    selected_hits: list[RetrievedHit] = []
-    for index, (candidate_hit, matched_markers, sanitized_markers) in enumerate(candidates):
-        if index < max_context_chunks:
-            selected_hits.append(candidate_hit)
+    selected_candidates = candidates[:max_context_chunks]
+    trimmed_candidates = candidates[max_context_chunks:]
+    selected_hits = [candidate_hit for candidate_hit, _, _ in selected_candidates]
+    query_title_tokens = extract_query_title_tokens(question)
+    query_support_tokens = extract_query_support_tokens(question, query_title_tokens)
+    has_query_support = any(
+        hit_supports_query(
+            query_title_tokens=query_title_tokens,
+            query_support_tokens=query_support_tokens,
+            hit=hit,
+        )
+        for hit in selected_hits
+    )
+    best_selected_score = min(hit.score for hit in selected_hits)
+    if (query_title_tokens or query_support_tokens) and not has_query_support and best_selected_score > WEAK_SUPPORT_SCORE_THRESHOLD:
+        for candidate_hit, matched_markers, sanitized_markers in selected_candidates:
             hit_traces.append(
                 HitProtectionTrace(
                     rank=candidate_hit.rank,
@@ -576,11 +722,50 @@ def prepare_context_hits(
                     score=candidate_hit.score,
                     matched_markers=matched_markers,
                     sanitized_markers=sanitized_markers,
-                    action="selected_for_prompt",
+                    action="weak_support_rejected",
                     text_preview=build_trace_preview(candidate_hit.text),
+                    reason="selected hits do not provide sufficient support for query terms and remain low-confidence",
                 )
             )
-            continue
+        for candidate_hit, matched_markers, sanitized_markers in trimmed_candidates:
+            hit_traces.append(
+                HitProtectionTrace(
+                    rank=candidate_hit.rank,
+                    source_label=candidate_hit.source_label,
+                    score=candidate_hit.score,
+                    matched_markers=matched_markers,
+                    sanitized_markers=sanitized_markers,
+                    action="trimmed_by_context_limit",
+                    text_preview=build_trace_preview(candidate_hit.text),
+                    reason="exceeded max_context_chunks",
+                )
+            )
+        return SelectionResult(
+            selected_hits=(),
+            protection_trace=ProtectionTrace(
+                mode=protection_mode,
+                preprompt_enabled=preprompt_enabled,
+                sanitize_enabled=sanitize_enabled,
+                postfilter_enabled=postfilter_enabled,
+                hit_traces=tuple(sorted(hit_traces, key=lambda trace: trace.rank)),
+                filter_reason="missing_title_overlap_on_weak_hits",
+            ),
+        )
+
+    for candidate_hit, matched_markers, sanitized_markers in selected_candidates:
+        hit_traces.append(
+            HitProtectionTrace(
+                rank=candidate_hit.rank,
+                source_label=candidate_hit.source_label,
+                score=candidate_hit.score,
+                matched_markers=matched_markers,
+                sanitized_markers=sanitized_markers,
+                action="selected_for_prompt",
+                text_preview=build_trace_preview(candidate_hit.text),
+            )
+        )
+
+    for candidate_hit, matched_markers, sanitized_markers in trimmed_candidates:
         hit_traces.append(
             HitProtectionTrace(
                 rank=candidate_hit.rank,
@@ -639,6 +824,114 @@ def is_substantive_chunk(text: str) -> bool:
 
 def count_words(text: str) -> int:
     return len(re.findall(r"\S+", text))
+
+
+def extract_query_title_tokens(question: str) -> set[str]:
+    title_tokens: set[str] = set()
+    for index, token in enumerate(TITLE_TOKEN_PATTERN.findall(question)):
+        normalized_token = normalize_lookup_token(token)
+        if not normalized_token:
+            continue
+        if index == 0 and normalized_token in LEADING_QUESTION_WORDS:
+            continue
+        if token[0].isupper() and len(normalized_token) > 2:
+            title_tokens.add(normalized_token)
+    return title_tokens
+
+
+def extract_query_support_tokens(question: str, query_title_tokens: set[str]) -> set[str]:
+    support_tokens: set[str] = set()
+    for token in TITLE_TOKEN_PATTERN.findall(question):
+        normalized_token = normalize_lookup_token(token)
+        if not normalized_token or len(normalized_token) <= 2:
+            continue
+        if normalized_token in QUERY_STOPWORDS or normalized_token in query_title_tokens:
+            continue
+        support_tokens.add(normalized_token)
+    return support_tokens
+
+
+def hit_supports_query(
+    *,
+    query_title_tokens: set[str],
+    query_support_tokens: set[str],
+    hit: RetrievedHit,
+) -> bool:
+    hit_text_tokens = {
+        normalize_lookup_token(token)
+        for token in TITLE_TOKEN_PATTERN.findall(hit.text)
+        if normalize_lookup_token(token)
+    }
+    hit_title_tokens = {
+        normalize_lookup_token(token)
+        for token in TITLE_TOKEN_PATTERN.findall(hit.title)
+        if normalize_lookup_token(token)
+    }
+
+    if query_support_tokens:
+        return len(query_support_tokens & hit_text_tokens) >= 2
+
+    if not query_title_tokens:
+        return False
+
+    return bool(query_title_tokens & (hit_text_tokens | hit_title_tokens))
+
+
+def should_retry_definition_query(
+    *,
+    query_title_tokens: set[str],
+    query_support_tokens: set[str],
+    retrieved_hits: list[RetrievedHit],
+) -> bool:
+    if query_support_tokens or not query_title_tokens:
+        return False
+    return any(
+        hit.retrieval_quality != "content"
+        and hit_supports_query(
+            query_title_tokens=query_title_tokens,
+            query_support_tokens=set(),
+            hit=hit,
+        )
+        for hit in retrieved_hits
+    )
+
+
+def build_definition_expansion_query(
+    *,
+    question: str,
+    query_title_tokens: set[str],
+    retrieved_hits: list[RetrievedHit],
+) -> str | None:
+    related_entities: list[str] = []
+    seen_entities: set[str] = set()
+
+    for hit in retrieved_hits:
+        if hit.retrieval_quality == "content":
+            continue
+        if not hit_supports_query(
+            query_title_tokens=query_title_tokens,
+            query_support_tokens=set(),
+            hit=hit,
+        ):
+            continue
+        for entity in hit.related_entities:
+            normalized_entity = normalize_lookup_token(entity)
+            if not normalized_entity or normalized_entity in query_title_tokens or normalized_entity in seen_entities:
+                continue
+            seen_entities.add(normalized_entity)
+            related_entities.append(entity)
+            if len(related_entities) >= 4:
+                break
+        if len(related_entities) >= 4:
+            break
+
+    if not related_entities:
+        return None
+    return f"{question} {' '.join(related_entities)}"
+
+
+def normalize_lookup_token(token: str) -> str:
+    return token.casefold().strip("'`-")
 
 
 def build_trace_preview(text: str, limit: int = TRACE_PREVIEW_LIMIT) -> str:
@@ -848,7 +1141,7 @@ def build_fallback_payload(question: str) -> dict[str, list[str] | str]:
 
 def build_lead_hit_step(language: QuestionLanguage, lead_hit: RetrievedHit) -> str:
     if language == "ru":
-        return f"Опёрся на фрагмент {lead_hit.title} из раздела {lead_hit.section}."
+        return f"Использовал фрагмент {lead_hit.title} из раздела {lead_hit.section}."
     return f"Used the fragment {lead_hit.title} from the {lead_hit.section} section."
 
 
