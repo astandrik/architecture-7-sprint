@@ -14,8 +14,10 @@ if str(SRC_DIR) not in sys.path:
 from task4_rag import (  # noqa: E402
     DEFAULT_OLLAMA_BASE_URL,
     DEFAULT_OLLAMA_MODEL,
+    DEFAULT_PROTECTION_MODE,
     DEFAULT_SCORE_THRESHOLD,
     DEFAULT_TOP_K,
+    PROTECTION_MODES,
     RagConfig,
     Task4RagError,
     format_rag_answer,
@@ -60,6 +62,12 @@ def parse_args() -> argparse.Namespace:
         "--query",
         help="Optional one-shot query. If omitted, the script starts the interactive REPL.",
     )
+    parser.add_argument(
+        "--protection-mode",
+        choices=PROTECTION_MODES,
+        default=DEFAULT_PROTECTION_MODE,
+        help="Injection-protection mode for retrieved chunks.",
+    )
     return parser.parse_args()
 
 
@@ -70,6 +78,7 @@ def build_config(args: argparse.Namespace) -> RagConfig:
         ollama_base_url=args.ollama_base_url,
         top_k=args.top_k,
         score_threshold=args.score_threshold,
+        protection_mode=args.protection_mode,
     )
 
 
