@@ -1,0 +1,28 @@
+services:
+  rag-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: architecture7-rag-bot
+    environment:
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+    working_dir: /app
+    command:
+      - python
+      - -B
+      - scripts/task4_repl.py
+      - --ollama-base-url
+      - ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./artifacts:/app/artifacts
+      - ./knowledge_base:/app/knowledge_base
+      - ./Task1:/app/Task1
+      - ./Task2:/app/Task2
+      - ./Task3:/app/Task3
+      - ./Task4:/app/Task4
+      - ./Task5:/app/Task5
+      - ./Task6:/app/Task6
+      - ./Task7:/app/Task7
+      - ./docs:/app/docs
