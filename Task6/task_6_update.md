@@ -8,6 +8,9 @@
 - расписание: ежедневно в `06:00`;
 - логирование: append-only `JSONL`.
 
+Для воспроизводимости репозитория `docs/` хранит baseline ingress corpus: в текущем состоянии там лежат те же `32` synthetic markdown-документа, что и в рабочей `knowledge_base/`.
+Это не отдельная “бизнесовая” база знаний, а зафиксированный демонстрационный источник для Task 6, от которого `scripts/update_index.py` может поднять state с нуля и затем перейти в обычный `no_changes` режим.
+
 ## Как работает pipeline
 
 `scripts/update_index.py` сканирует `docs/`, считает `sha256` для каждого `*.md` и сравнивает текущее состояние с `artifacts/task6/update_state.json`.
@@ -95,6 +98,13 @@ CLI contract:
 - `index_size_bytes`
 - `errors`
 - `warnings`
+
+Текущее воспроизводимое состояние репозитория:
+
+- `docs/` содержит `32` валидных markdown-документа;
+- `artifacts/task6/update_state.json` содержит непустой `files` manifest;
+- один bootstrap-прогон фиксирует `status=success new=32 changed=0 deleted=0 rebuild=True`;
+- следующий прогон без изменений фиксирует `status=no_changes`.
 
 Пример сценариев:
 

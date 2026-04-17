@@ -25,7 +25,6 @@ DEFAULT_OLLAMA_BASE_URL = "http://localhost:11434"
 DEFAULT_TOP_K = 5
 DEFAULT_MAX_CONTEXT_CHUNKS = 3
 DEFAULT_SCORE_THRESHOLD = 1.45
-WEAK_SUPPORT_SCORE_THRESHOLD = 1.0
 DEFAULT_TEMPERATURE = 0.1
 DEFAULT_NUM_CTX = 4096
 DEFAULT_NUM_PREDICT = 350
@@ -702,55 +701,6 @@ def prepare_context_hits(
     selected_candidates = candidates[:max_context_chunks]
     trimmed_candidates = candidates[max_context_chunks:]
     selected_hits = [candidate_hit for candidate_hit, _, _ in selected_candidates]
-    query_title_tokens = extract_query_title_tokens(question)
-    query_support_tokens = extract_query_support_tokens(question, query_title_tokens)
-    has_query_support = any(
-        hit_supports_query(
-            query_title_tokens=query_title_tokens,
-            query_support_tokens=query_support_tokens,
-            hit=hit,
-        )
-        for hit in selected_hits
-    )
-    best_selected_score = min(hit.score for hit in selected_hits)
-    if (query_title_tokens or query_support_tokens) and not has_query_support and best_selected_score > WEAK_SUPPORT_SCORE_THRESHOLD:
-        for candidate_hit, matched_markers, sanitized_markers in selected_candidates:
-            hit_traces.append(
-                HitProtectionTrace(
-                    rank=candidate_hit.rank,
-                    source_label=candidate_hit.source_label,
-                    score=candidate_hit.score,
-                    matched_markers=matched_markers,
-                    sanitized_markers=sanitized_markers,
-                    action="weak_support_rejected",
-                    text_preview=build_trace_preview(candidate_hit.text),
-                    reason="selected hits do not provide sufficient support for query terms and remain low-confidence",
-                )
-            )
-        for candidate_hit, matched_markers, sanitized_markers in trimmed_candidates:
-            hit_traces.append(
-                HitProtectionTrace(
-                    rank=candidate_hit.rank,
-                    source_label=candidate_hit.source_label,
-                    score=candidate_hit.score,
-                    matched_markers=matched_markers,
-                    sanitized_markers=sanitized_markers,
-                    action="trimmed_by_context_limit",
-                    text_preview=build_trace_preview(candidate_hit.text),
-                    reason="exceeded max_context_chunks",
-                )
-            )
-        return SelectionResult(
-            selected_hits=(),
-            protection_trace=ProtectionTrace(
-                mode=protection_mode,
-                preprompt_enabled=preprompt_enabled,
-                sanitize_enabled=sanitize_enabled,
-                postfilter_enabled=postfilter_enabled,
-                hit_traces=tuple(sorted(hit_traces, key=lambda trace: trace.rank)),
-                filter_reason="missing_title_overlap_on_weak_hits",
-            ),
-        )
 
     for candidate_hit, matched_markers, sanitized_markers in selected_candidates:
         hit_traces.append(
