@@ -18,10 +18,10 @@ Insert the sphere into the door below to open it, and then retrieve the sphere a
 
 ## Related entities
 
-- Caelan Veyr
-- Elyra Noctis
 - Asterreach
-- Veylspire
+- Caelan Veyr
+- Dreambound
+- Elyra Noctis
 - The Luminous Order
 - Truce of Ash
-- Dreambound
+- Veylspire

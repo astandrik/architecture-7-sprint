@@ -18,11 +18,11 @@ Garron Vale exhibits some fatherly tendencies with Caelan Veyr and Elyra Noctis 
 
 ## Related entities
 
-- Caelan Veyr
-- Elyra Noctis
-- Torren Kaid
-- Darius Veyr
 - Arcton Veyr
 - Asterreach
+- Caelan Veyr
+- Darius Veyr
 - Elyndra
+- Elyra Noctis
 - Lucent Harbor
+- The Luminous Order

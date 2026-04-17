@@ -16,11 +16,11 @@ Elyra Noctis is a talented invoker despite her youth, besting her more experienc
 
 ## Related entities
 
-- Caelan Veyr
-- Garron Vale
-- Nerys Quill
 - Asterreach
+- Caelan Veyr
 - Elyndra
+- Garron Vale
 - Lucent Harbor
-- Veylspire
 - Mount Kaelorn
+- Nerys Quill
+- The Hollow Eclipse

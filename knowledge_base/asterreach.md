@@ -14,6 +14,6 @@ The Asterreach Dome is the ruins of the former temple and government seat of Ast
 
 ## Related entities
 
-- Elyra Noctis
-- Elyndra
 - Dreambound
+- Elyndra
+- Elyra Noctis

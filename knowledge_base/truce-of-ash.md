@@ -14,5 +14,5 @@ Recovered notes about Truce of Ash remain fragmentary, yet the surviving records
 
 - Arcton Veyr
 - Elyndra
-- The Luminous Order
 - The Hollow Eclipse
+- The Luminous Order

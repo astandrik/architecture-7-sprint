@@ -14,11 +14,11 @@ Selene Marr is stoic and almost never breaks her stern demeanor. Though usually 
 
 ## Related entities
 
-- Caelan Veyr
-- Elyra Noctis
-- Torren Kaid
-- Nerys Quill
 - Asterreach
+- Caelan Veyr
+- Dreambound
 - Elyndra
+- Elyra Noctis
 - Lucent Harbor
-- Veylspire
+- Nerys Quill
+- The Hollow Eclipse

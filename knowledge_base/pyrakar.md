@@ -1,6 +1,6 @@
 # Pyrakar
 
-Type: aeon
+Type: eidolon
 
 ## Overview
 
@@ -13,10 +13,10 @@ Recovered notes about Pyrakar remain fragmentary, yet the surviving records stil
 ## Related entities
 
 - Caelan Veyr
+- Dreambound
 - Elyra Noctis
-- Torren Kaid
-- Veylspire
+- Sanctum of Ordeals
 - Starfang
 - The Wardens of Dawn
-- Dreambound
-- Sanctum of Ordeals
+- Torren Kaid
+- Veylspire

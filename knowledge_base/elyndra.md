@@ -14,15 +14,15 @@ The temple of The Luminous Order dominates Elyndran life, spreading its teaching
 
 The Luminous Order script is related to Archon Velis and the faith of The Luminous Order and is used in temples and inside The Hollow Eclipse. Cactuars have their own language, with Benzo being the only human interpreter.
 
-The teachings of The Luminous Order, said to have been left by Asterreach's leader, Archon Velis, to his daughter, Lady Yunalesca, were implemented by Veylspire to maintain order through giving the people hope that Elyndra may someday be free of The Hollow Eclipse should they atone. Until Elyra Noctis exposes their lies, the temples teach that relic engines is forbidden, that The Hollow Eclipse is a result of humanity's pride and use of relic engines in the past, and that The Hollow Eclipse can only be vanquished when humanity has attained purity and had been cleansed of past sins. Until that promised time would come, only the ritual known as the Last Invocation would provide a reprieve from The Hollow Eclipse's terror (referred to as "The Truce of Ash ").
+The teachings of The Luminous Order, said to have been left by Asterreach's leader, Archon Velis, to his daughter, Lady Velisara, were implemented by Veylspire to maintain order through giving the people hope that Elyndra may someday be free of The Hollow Eclipse should they atone. Until Elyra Noctis exposes their lies, the temples teach that relic engines is forbidden, that The Hollow Eclipse is a result of humanity's pride and use of relic engines in the past, and that The Hollow Eclipse can only be vanquished when humanity has attained purity and had been cleansed of past sins. Until that promised time would come, only the ritual known as the Last Invocation would provide a reprieve from The Hollow Eclipse's terror (referred to as "The Truce of Ash ").
 
 ## Related entities
 
+- Asterreach
 - Caelan Veyr
 - Elyra Noctis
 - Garron Vale
-- Asterreach
+- Last Invocation
 - Lucent Harbor
-- Veylspire
 - Mount Kaelorn
-- The Luminous Order
+- The Hollow Eclipse

@@ -14,11 +14,11 @@ Veyn Temple is located in Veyn Village. It is where the eidolon, Aurelion, is ob
 
 ## Related entities
 
-- Elyra Noctis
-- Torren Kaid
-- Selene Marr
-- Elyndra
 - Aurelion
+- Dreambound
+- Elyndra
+- Elyra Noctis
+- Sanctum of Ordeals
+- Selene Marr
 - The Luminous Order
 - The Wardens of Dawn
-- Dreambound

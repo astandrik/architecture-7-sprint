@@ -1,6 +1,6 @@
 # Aurelion
 
-Type: aeon
+Type: eidolon
 
 ## Overview
 
@@ -13,10 +13,10 @@ Recovered notes about Aurelion remain fragmentary, yet the surviving records sti
 ## Related entities
 
 - Caelan Veyr
-- Elyra Noctis
-- Veylspire
 - Cyralith
-- The Luminous Order
-- The Hollow Eclipse
 - Dreambound
+- Elyra Noctis
 - Sanctum of Ordeals
+- The Hollow Eclipse
+- The Luminous Order
+- Veylspire

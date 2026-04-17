@@ -268,6 +268,7 @@ def sanitize_blocks(raw_blocks: list[str], terms_map: dict[str, str], limit: int
 
 def format_markdown(
     entry: ManifestEntry,
+    synthetic_type: str,
     overview_blocks: list[str],
     detail_blocks: list[str],
     related_entities: list[str],
@@ -278,7 +279,7 @@ def format_markdown(
     related = "\n".join(f"- {title}" for title in related_lines)
     return (
         f"# {entry.synthetic_title}\n\n"
-        f"Type: {entry.entity_type}\n\n"
+        f"Type: {synthetic_type}\n\n"
         f"## Overview\n\n{overview}\n\n"
         f"## Details\n\n{details}\n\n"
         f"## Related entities\n\n{related}\n"
@@ -325,7 +326,8 @@ def main() -> int:
         )
 
         related_entities = find_related_entities(plain_text, entry, manifest_entries)
-        markdown = format_markdown(entry, overview_blocks, detail_blocks, related_entities)
+        synthetic_type = terms_map.get(entry.entity_type, entry.entity_type)
+        markdown = format_markdown(entry, synthetic_type, overview_blocks, detail_blocks, related_entities)
         write_markdown(output_dir / f"{entry.synthetic_slug}.md", markdown)
 
     terms_map_output = output_dir / "terms_map.json"

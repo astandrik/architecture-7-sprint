@@ -12,11 +12,11 @@ To Caelan Veyr's dismay, he has similarities to his father, who tended to ignore
 
 ## Related entities
 
+- Asterreach
+- Darius Veyr
+- Elyndra
 - Elyra Noctis
 - Garron Vale
-- Torren Kaid
-- Nerys Quill
-- Darius Veyr
-- Asterreach
-- Elyndra
 - Isola Veyn
+- Lucent Harbor
+- Nerys Quill

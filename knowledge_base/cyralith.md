@@ -1,6 +1,6 @@
 # Cyralith
 
-Type: aeon
+Type: eidolon
 
 ## Overview
 
@@ -14,5 +14,5 @@ Recovered notes about Cyralith remain fragmentary, yet the surviving records sti
 
 - Elyra Noctis
 - Selene Marr
-- Veylspire
 - Veilward
+- Veylspire

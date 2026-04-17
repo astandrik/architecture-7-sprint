@@ -18,11 +18,11 @@ Asterreach – At the Asterreach Dome the invoker can acquire the Crown Eidolon.
 
 ## Related entities
 
-- Maelor Voss
 - Arcton Veyr
 - Asterreach
-- Elyndra
-- Veylspire
 - Cyralith
+- Dreambound
+- Elyndra
+- Maelor Voss
 - Starfang
-- The Relicborn
+- The Hollow Eclipse

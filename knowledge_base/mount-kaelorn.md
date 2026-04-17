@@ -18,11 +18,11 @@ Lian and Ayde have returned to Mount Kaelorn, but Garik Rhunari is still feeling
 
 ## Related entities
 
-- Caelan Veyr
-- Torren Kaid
-- Nerys Quill
-- Kaelor Rhun
 - Asterreach
+- Caelan Veyr
+- Dreambound
 - Elyndra
-- Veylspire
+- Kaelor Rhun
+- Nerys Quill
 - The Sylvan Court
+- Torren Kaid

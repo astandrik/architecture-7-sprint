@@ -14,7 +14,7 @@ Kaelor has blue fur and white hair and a beard. He is leonine, tall, muscular, a
 
 - Caelan Veyr
 - Elyra Noctis
-- Selene Marr
 - Lucent Harbor
-- Veylspire
 - Mount Kaelorn
+- Selene Marr
+- Veylspire
