@@ -169,7 +169,7 @@ Skyball is a famous ball game played in an open-air water sphere stadium with tr
 
 ## Примеры fallback-ответов
 
-Здесь собраны две разные ветки отказа. 06, 08, 09, 10 — это hardcoded short-circuit: лучший `distance > 1.45`, LLM не вызывается вообще. 07 — другое: retrieval вернул три чанка в пределах порога, но ни один не упоминал нужную сущность, и модель сама честно отказалась, потому что system-prompt запрещает отвечать вне контекста.
+Здесь собраны две разные ветки отказа. 06, 08, 09, 10 — это hardcoded short-circuit: лучший `distance > 1.45`, LLM не вызывается вообще. 07 — другое: retrieval вернул три чанка в пределах порога, LLM вызвана и сама отказалась отвечать. Пост-процессор [parse_model_response](../src/task4_rag.py#L950) распознал отказ через `is_no_answer_text` и унифицировал вывод: шаги, ответ и источники заменены на fallback-payload. Это защищает от ситуации, где «я не знаю» соседствует с тремя seemingly-связанными источниками и вводит пользователя в заблуждение.
 
 ### Fallback 1 — скрин `06_fallback_spira.png`
 
@@ -199,20 +199,17 @@ A:
 
 ```
 Краткие шаги:
-1. Searched the knowledge base and selected the most relevant chunks.
-2. Used the fragment Isola Veyn from the Details section.
-3. Formulated the answer using only retrieved context.
+1. Searched the knowledge base.
+2. Did not find relevant fragments for the answer.
 
 Ответ:
-Информации о персонаже Auron в предоставленном контексте нет.
+I don't know.
 
 Источники:
-- Isola Veyn — knowledge_base/isola-veyn.md (Details)
-- Maelor Voss — knowledge_base/maelor-voss.md (Overview)
-- Arcton Veyr — knowledge_base/arcton-veyr.md (Overview)
+- no relevant context found
 ```
 
-Интереснее первого: retrieval не отсёк запрос, три чанка прошли score-порог, и grounded refusal сделал сам LLM. Это важная демонстрация — система не полагается только на relevance-gate, grounded-only правила в system-prompt ловят случаи, где embedding-сходство обмануло, а семантики в контексте нет.
+Интереснее первого. Retrieval не отсекает запрос: 3 content-чанка (Isola Veyn, Maelor Voss, Arcton Veyr) проходят score-порог и попадают в prompt. LLM вызывается, читает контекст и сама возвращает grounded refusal — про `Auron` в фрагментах ничего нет. Затем пост-процессор через `is_no_answer_text` детектит отказ и переписывает секции `Краткие шаги` / `Ответ` / `Источники` на унифицированный fallback-payload. Итог: пользователю не показываются источники, которые фактически не поддержали ответ, а демонстрация в том, что grounded-only правила в system-prompt ловят случаи, где embedding-сходство обмануло relevance-gate.
 
 ### Fallback 3 — скрин `08_fallback_yuna.png`
 

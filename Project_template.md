@@ -65,8 +65,8 @@
   - embedding dimension: `384`
   - chunk size: `220`
   - chunk overlap: `40`
-  - chunks count: `69`
-  - build seconds: `10.659`
+  - chunks count: `72`
+  - build seconds: `9.393`
 
 ## Задание 4. RAG-бот
 
@@ -82,7 +82,7 @@
   - language-aware fallback
 - Зафиксированные демонстрации:
   - `5` успешных one-shot диалогов
-  - `2` fallback-кейса
+  - `5` fallback-кейсов
 
 ## Задание 5. Prompt injection demo
 
@@ -169,9 +169,9 @@
   - `05_success_skyball.png`
   - `06_fallback_spira.png`
   - `07_fallback_auron.png`
-- `08_fallback_yuna.png`
-- `09_fallback_far_plain.png`
-- `10_fallback_the_sin.png`
+  - `08_fallback_yuna.png`
+  - `09_fallback_far_plain.png`
+  - `10_fallback_the_sin.png`
 
 ## Примечание по Docker
 
