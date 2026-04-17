@@ -2,124 +2,71 @@
 
 ## Что было сделано
 
-Для Task 3 выбран стек, зафиксированный в Task 1:
+Стек зафиксирован в Task 1:
 
-- embedding-модель: `sentence-transformers/all-MiniLM-L6-v2`
-- ссылка на модель: `https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2`
-- размер эмбеддингов: `384`
+- embedding-модель: `sentence-transformers/all-MiniLM-L6-v2` (https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
+- размер эмбеддингов: 384
 - векторная БД: `FAISS`
-- входная база знаний: `knowledge_base/`
+- вход: `knowledge_base/`
 
-Индекс строится скриптом:
-
-- `scripts/build_index.py`
-
-Проверочный retrieval по готовому индексу выполняется скриптом:
-
-- `scripts/query_index.py`
+Сборка — `scripts/build_index.py`. Проверка retrieval — `scripts/query_index.py`.
 
 ## Как устроена индексация
 
-В индексацию попадают только файлы `knowledge_base/*.md`. Служебные файлы вроде `terms_map.json` и `.gitkeep` в индекс не включаются.
+В индекс идут только `knowledge_base/*.md`; `terms_map.json`, `.gitkeep` и прочая служебка отфильтровывается.
 
-Каждый документ сначала валидируется по ожидаемой структуре:
+Перед чанкингом документ валидируется по ожидаемой структуре: заголовок `# Title`, строка `Type:`, секции `Overview`, `Details`, `Related entities`.
 
-- заголовок `# Title`
-- строка `Type: ...`
-- секции `Overview`, `Details`, `Related entities`
+Векторизуются только `Overview` и `Details`. `Related entities` живёт в metadata — в similarity search его не пускаю, там всё равно короткий список имён, который без контекста ломает scoring.
 
-Векторизуются только `Overview` и `Details`. Секция `Related entities` не превращается в отдельный чанк, а сохраняется в metadata, чтобы не добавлять шум в similarity search.
+К тексту каждого чанка добавляется префикс:
 
-Для каждого чанка в индекс добавляется контекстный префикс:
+```
+Title: ...
+Type: ...
+Section: ...
+```
 
-- `Title: ...`
-- `Type: ...`
-- `Section: ...`
+Это нужно, чтобы при top-k retrieval на стороне Task 4 модель видела, в какой сущности сидит фрагмент, даже если сам чанк про это явно не говорит.
 
-Используется section-aware chunking:
-
-- короткие секции сохраняются как один чанк;
-- длинные секции режутся через `RecursiveCharacterTextSplitter.from_tiktoken_encoder`.
-
-Параметры чанкинга:
+Chunking — section-aware: короткая секция остаётся одним чанком, длинная режется через `RecursiveCharacterTextSplitter.from_tiktoken_encoder` с параметрами:
 
 - `chunk_size=220`
 - `chunk_overlap=40`
 - `separators=["\n\n", "\n", ". ", " ", ""]`
 - encoder: `cl100k_base`
 
-Для каждого чанка сохраняются metadata:
-
-- `chunk_id`
-- `source_path`
-- `title`
-- `entity_type`
-- `section`
-- `chunk_index`
-- `char_start`
-- `char_end`
-- `word_count`
-- `related_entities`
+С каждым чанком в индекс уходят metadata: `chunk_id`, `source_path`, `title`, `entity_type`, `section`, `chunk_index`, `char_start`, `char_end`, `word_count`, `related_entities`. Это то, что потом нужно Task 4 для цитирования и диагностики.
 
 ## Результат сборки
 
-Собранные артефакты лежат в `artifacts/task3/`:
+Артефакты в `artifacts/task3/`:
 
-- `artifacts/task3/faiss_index/index.faiss`
-- `artifacts/task3/faiss_index/index.pkl`
-- `artifacts/task3/chunks.jsonl`
-- `artifacts/task3/index_build_report.json`
+- `faiss_index/index.faiss`
+- `faiss_index/index.pkl`
+- `chunks.jsonl`
+- `index_build_report.json`
 
-Фактический результат текущей пересборки после дополнительной очистки Task 2:
+После пересборки на обновлённой KB:
 
-- документов в KB: `32`
-- чанков в индексе: `69`
-- время сборки индекса: `10.659` секунды
-- `knowledge_base_dir` в отчёте: `knowledge_base`
+- документов: 32
+- чанков: 69
+- время сборки: 10.659 с
 
 ## Примеры retrieval-запросов
 
 ### 1. `Who is Caelan Veyr's father?`
 
-Top-1:
-
-- `knowledge_base/caelan-veyr.md`
-- section: `Details`
-- chunk: `caelan-veyr::details::000`
-
-Найденный чанк явно ведёт к ответу про `Darius Veyr`.
+Top-1 — `caelan-veyr.md / Details / caelan-veyr::details::000`. Чанк упоминает отца явно, ответ `Darius Veyr` достаётся без второго хопа.
 
 ### 2. `What is the Hollow Eclipse?`
 
-Top-1:
-
-- `knowledge_base/the-hollow-eclipse.md`
-- section: `Overview`
-- chunk: `the-hollow-eclipse::overview::000`
-
-Top-2:
-
-- `knowledge_base/the-hollow-eclipse.md`
-- section: `Details`
-- chunk: `the-hollow-eclipse::details::000`
-
-По этому запросу ожидаемая сущность возвращается сразу двумя первыми результатами.
+Top-1 и top-2 — оба из `the-hollow-eclipse.md`: сначала Overview, потом Details. Сущность возвращается двумя первыми результатами.
 
 ### 3. `What ritual sends souls to the Veilward?`
 
-Top-3 содержит чанк с целевым ответом:
+Top-1 и top-2 заняты самой сущностью `Veilward` (её страница). Целевой чанк про ритуал сидит в top-3 — `elyra-noctis.md / Details / elyra-noctis::details::002`. Для baseline-retrieval это ожидаемо: embedding тянет и на место, и на связанный с ним ритуал, и оба тянут сильнее, чем описание самого ритуала в карточке персонажа.
 
-- `knowledge_base/elyra-noctis.md`
-- section: `Details`
-- chunk: `elyra-noctis::details::002`
+## Вывод
 
-При этом top-1 и top-2 заняты самой сущностью `Veilward`, что для текущего baseline-retrieval ожидаемо: запрос семантически тянет и на концепт места, и на ритуал, связанный с ним.
-
-## Краткий вывод
-
-Task 3 закрыт в формате `скрипт + отчёт`:
-
-- индекс собран и сохранён;
-- есть код сборки и код запроса к индексу;
-- retrieval sanity-check повторно пройден после очистки synthetic KB;
-- структура артефактов уже пригодна для прямого переиспользования в Task 4.
+Индекс собран и воспроизводим из KB. Sanity-check на трёх разных типах запросов проходит: прямой факт, определение сущности, факт через связанную страницу. Артефакты в `artifacts/task3/` Task 4 использует напрямую, отдельной пересборки под него не нужно.
