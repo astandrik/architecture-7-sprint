@@ -1,6 +1,6 @@
 # Starfang
 
-Type: aeon
+Type: eidolon
 
 ## Overview
 
@@ -13,7 +13,7 @@ Starfang is obtained after completing the Sanctum of Ordeals in Veylspire Temple
 ## Related entities
 
 - Asterreach
-- Veylspire
-- The Luminous Order
 - Dreambound
 - Sanctum of Ordeals
+- The Luminous Order
+- Veylspire

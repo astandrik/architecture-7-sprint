@@ -1,6 +1,6 @@
 # Voltaris
 
-Type: aeon
+Type: eidolon
 
 ## Overview
 
@@ -13,7 +13,7 @@ Recovered notes about Voltaris remain fragmentary, yet the surviving records sti
 ## Related entities
 
 - Caelan Veyr
-- Elyra Noctis
-- The Relicborn
 - Dreambound
+- Elyra Noctis
 - Sanctum of Ordeals
+- The Relicborn

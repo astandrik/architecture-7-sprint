@@ -13,10 +13,10 @@ Torren Kaid has a big heart and frequently attempts to cheer the party up, thoug
 ## Related entities
 
 - Caelan Veyr
-- Elyra Noctis
-- Selene Marr
-- Nerys Quill
 - Elyndra
+- Elyra Noctis
 - Isola Veyn
 - Lucent Harbor
-- Veylspire
+- Nerys Quill
+- Selene Marr
+- The Luminous Order

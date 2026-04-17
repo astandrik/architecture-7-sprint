@@ -14,11 +14,11 @@ Arcton Veyr was a kind, cheerful man, desiring peace and unity and willing to sa
 
 ## Related entities
 
+- Darius Veyr
+- Elyndra
 - Elyra Noctis
 - Garron Vale
 - Nerys Quill
-- Darius Veyr
-- Elyndra
+- The Hollow Eclipse
 - The Luminous Order
 - The Relicborn
-- The Hollow Eclipse

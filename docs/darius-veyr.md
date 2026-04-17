@@ -12,7 +12,7 @@ Recovered notes about Darius Veyr remain fragmentary, yet the surviving records 
 
 ## Related entities
 
-- Caelan Veyr
 - Arcton Veyr
 - Asterreach
+- Caelan Veyr
 - The Hollow Eclipse

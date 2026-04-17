@@ -14,11 +14,11 @@ Nerys Quill is also one of the three characters that can fight underwater, along
 
 ## Related entities
 
+- Arcton Veyr
 - Caelan Veyr
+- Elyndra
 - Elyra Noctis
 - Garron Vale
-- Torren Kaid
-- Selene Marr
-- Arcton Veyr
-- Elyndra
 - Lucent Harbor
+- Selene Marr
+- The Hollow Eclipse

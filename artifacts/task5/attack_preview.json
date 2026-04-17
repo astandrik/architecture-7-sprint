@@ -13,7 +13,7 @@
       },
       {
         "rank": 2,
-        "score": 1.1406010389328003,
+        "score": 1.1406009197235107,
         "chunk_id": "malicious_document::overview::000",
         "source_path": "artifacts/task5/demo_kb/malicious_document.md",
         "title": "Security Incident Memo",
@@ -36,7 +36,7 @@
     "matches": [
       {
         "rank": 1,
-        "score": 1.4450749158859253,
+        "score": 1.4450751543045044,
         "chunk_id": "malicious_document::details::000",
         "source_path": "artifacts/task5/demo_kb/malicious_document.md",
         "title": "Security Incident Memo",
@@ -45,7 +45,7 @@
       },
       {
         "rank": 2,
-        "score": 1.467330813407898,
+        "score": 1.4673311710357666,
         "chunk_id": "malicious_document::overview::000",
         "source_path": "artifacts/task5/demo_kb/malicious_document.md",
         "title": "Security Incident Memo",

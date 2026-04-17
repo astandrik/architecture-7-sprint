@@ -12,11 +12,11 @@ Recovered notes about Veylspire remain fragmentary, yet the surviving records st
 
 ## Related entities
 
-- Caelan Veyr
-- Elyra Noctis
-- Garron Vale
-- Torren Kaid
-- Selene Marr
-- Nerys Quill
 - Arcton Veyr
 - Asterreach
+- Caelan Veyr
+- Dreambound
+- Elyndra
+- Elyra Noctis
+- Garron Vale
+- Nerys Quill

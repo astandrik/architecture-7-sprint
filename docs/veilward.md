@@ -13,8 +13,8 @@ Recovered notes about Veilward remain fragmentary, yet the surviving records sti
 ## Related entities
 
 - Caelan Veyr
-- Selene Marr
+- Dreambound
 - Elyndra
+- Selene Marr
 - The Luminous Order
 - The Sylvan Court
-- Dreambound

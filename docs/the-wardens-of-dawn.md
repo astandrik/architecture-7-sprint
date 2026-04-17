@@ -12,11 +12,11 @@ On Veyn, the Wardens of Dawn's Lodge serves as an inn for both The Wardens of Da
 
 ## Related entities
 
-- Caelan Veyr
-- Garron Vale
-- Torren Kaid
 - Asterreach
+- Caelan Veyr
 - Elyndra
+- Garron Vale
 - Lucent Harbor
-- Veylspire
+- The Hollow Eclipse
 - The Luminous Order
+- The Relicborn

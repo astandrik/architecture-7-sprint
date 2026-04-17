@@ -18,11 +18,11 @@ There is only one five-minute round, with no break or half time.
 
 ## Related entities
 
-- Caelan Veyr
-- Torren Kaid
-- Darius Veyr
 - Asterreach
+- Caelan Veyr
+- Darius Veyr
 - Elyndra
 - Lucent Harbor
-- The Wardens of Dawn
 - The Hollow Eclipse
+- The Wardens of Dawn
+- Torren Kaid

@@ -18,9 +18,9 @@ Some words have been adopted from the main Elyndran language, such as voidbeast,
 
 ## Related entities
 
+- Elyndra
 - Elyra Noctis
 - Garron Vale
 - Nerys Quill
-- Elyndra
-- The Luminous Order
 - The Hollow Eclipse
+- The Luminous Order

@@ -18,11 +18,11 @@ Maelor relies on casting elemental magic and using combo attacks with whichever 
 
 ## Related entities
 
+- Elyndra
 - Elyra Noctis
 - Garron Vale
-- Elyndra
 - Mount Kaelorn
+- The Hollow Eclipse
 - The Luminous Order
 - The Sylvan Court
-- The Hollow Eclipse
 - Veilward
