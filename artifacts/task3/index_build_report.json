@@ -4,12 +4,12 @@
   "embedding_dimension": 384,
   "knowledge_base_dir": "knowledge_base",
   "documents_count": 32,
-  "chunks_count": 69,
+  "chunks_count": 72,
   "chunking_strategy": "Hybrid section-aware chunking: short sections kept intact; long sections split with RecursiveCharacterTextSplitter.from_tiktoken_encoder",
   "chunk_size": 220,
   "chunk_overlap": 40,
-  "build_seconds": 9.778,
-  "created_at": "2026-04-17T15:04:07.828119+00:00",
+  "build_seconds": 9.715,
+  "created_at": "2026-04-17T16:04:07.522521+00:00",
   "preview_queries": [
     {
       "query": "Who is Caelan Veyr's father?",
@@ -48,20 +48,20 @@
       "matches": [
         {
           "rank": 1,
-          "score": 0.42857733368873596,
-          "chunk_id": "the-hollow-eclipse::overview::000",
-          "source_path": "knowledge_base/the-hollow-eclipse.md",
-          "title": "The Hollow Eclipse",
-          "section": "Overview",
-          "excerpt": "The Hollow Eclipse is preserved in the archive as a concept woven into Elyndran history, ritual memory, and the synthetic world model prepared for retrieval."
-        },
-        {
-          "rank": 2,
-          "score": 0.5716356635093689,
+          "score": 0.5521681308746338,
           "chunk_id": "the-hollow-eclipse::details::000",
           "source_path": "knowledge_base/the-hollow-eclipse.md",
           "title": "The Hollow Eclipse",
           "section": "Details",
+          "excerpt": "The Hollow Eclipse has a whale-like body that it moves with a pair of clawed arms, as well as hind legs resembling pectoral fins for movement in water. It has a long tail and its body is encased in scales it can shed..."
+        },
+        {
+          "rank": 2,
+          "score": 0.6775941848754883,
+          "chunk_id": "the-hollow-eclipse::overview::000",
+          "source_path": "knowledge_base/the-hollow-eclipse.md",
+          "title": "The Hollow Eclipse",
+          "section": "Overview",
           "excerpt": "The Hollow Eclipse has a whale-like body that it moves with a pair of clawed arms, as well as hind legs resembling pectoral fins for movement in water. It has a long tail and its body is encased in scales it can shed..."
         },
         {
@@ -80,30 +80,30 @@
       "matches": [
         {
           "rank": 1,
-          "score": 0.9544448852539062,
-          "chunk_id": "veilward::overview::000",
-          "source_path": "knowledge_base/veilward.md",
-          "title": "Veilward",
-          "section": "Overview",
-          "excerpt": "Veilward is preserved in the archive as a concept woven into Elyndran history, ritual memory, and the synthetic world model prepared for retrieval."
-        },
-        {
-          "rank": 2,
-          "score": 1.089548945426941,
-          "chunk_id": "veilward::details::000",
-          "source_path": "knowledge_base/veilward.md",
-          "title": "Veilward",
-          "section": "Details",
-          "excerpt": "Recovered notes about Veilward remain fragmentary, yet the surviving records still connect it to Elyndran institutions, pilgrimage-era practices, and a broader network of related entities inside the synthetic corpus."
-        },
-        {
-          "rank": 3,
           "score": 1.2034070491790771,
           "chunk_id": "elyra-noctis::details::002",
           "source_path": "knowledge_base/elyra-noctis.md",
           "title": "Elyra Noctis",
           "section": "Details",
           "excerpt": "Elyra Noctis is a talented invoker despite her youth, besting her more experienced peers in eidolon duels (albeit, at times, with her oathsworn's aid). She can even summon during a free fall. She performs the sending..."
+        },
+        {
+          "rank": 2,
+          "score": 1.2845237255096436,
+          "chunk_id": "the-luminous-order::details::000",
+          "source_path": "knowledge_base/the-luminous-order.md",
+          "title": "The Luminous Order",
+          "section": "Details",
+          "excerpt": "Temples of The Luminous Order are found throughout Elyndra. At the heart of each temple lies a Chamber of the Dreambound, a room that contains a dreambound —a statue that houses a willingly-given human soul. Through t..."
+        },
+        {
+          "rank": 3,
+          "score": 1.3103829622268677,
+          "chunk_id": "elyndra::details::001",
+          "source_path": "knowledge_base/elyndra.md",
+          "title": "Elyndra",
+          "section": "Details",
+          "excerpt": "The teachings of The Luminous Order, said to have been left by Asterreach's leader, Archon Velis, to his daughter, Lady Velisara, were implemented by Veylspire to maintain order through giving the people hope that Ely..."
         }
       ]
     }

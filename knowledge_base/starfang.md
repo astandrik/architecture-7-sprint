@@ -13,7 +13,7 @@ Starfang is obtained after completing the Sanctum of Ordeals in Veylspire Temple
 ## Related entities
 
 - Asterreach
-- Dreambound
+- Serem Vale
 - Sanctum of Ordeals
 - The Luminous Order
-- Veylspire
+- Velisara

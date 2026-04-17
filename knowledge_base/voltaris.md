@@ -12,8 +12,8 @@ Recovered notes about Voltaris remain fragmentary, yet the surviving records sti
 
 ## Related entities
 
+- Serem Vale
 - Caelan Veyr
-- Dreambound
 - Elyra Noctis
 - Sanctum of Ordeals
 - The Relicborn

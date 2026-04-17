@@ -12,11 +12,10 @@ Recovered notes about Pyrakar remain fragmentary, yet the surviving records stil
 
 ## Related entities
 
+- Serem Vale
 - Caelan Veyr
-- Dreambound
 - Elyra Noctis
 - Sanctum of Ordeals
 - Starfang
 - The Wardens of Dawn
 - Torren Kaid
-- Veylspire

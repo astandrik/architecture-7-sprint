@@ -4,7 +4,7 @@ Type: faction
 
 ## Overview
 
-The Luminous Order is preserved in the archive as a faction woven into Elyndran history, ritual memory, and the synthetic world model prepared for retrieval.
+Temples of The Luminous Order are found throughout Elyndra. At the heart of each temple lies a Chamber of the Dreambound, a room that contains a dreambound —a statue that houses a willingly-given human soul.
 
 ## Details
 
@@ -20,9 +20,9 @@ Asterreach – At the Asterreach Dome the invoker can acquire the Crown Eidolon.
 
 - Arcton Veyr
 - Asterreach
-- Cyralith
-- Dreambound
 - Elyndra
 - Maelor Voss
+- Rhunari
 - Starfang
 - The Hollow Eclipse
+- The Relicborn

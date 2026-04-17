@@ -13,10 +13,10 @@ To Caelan Veyr's dismay, he has similarities to his father, who tended to ignore
 ## Related entities
 
 - Asterreach
-- Darius Veyr
 - Elyndra
 - Elyra Noctis
 - Garron Vale
 - Isola Veyn
-- Lucent Harbor
 - Nerys Quill
+- Skyball
+- The Hollow Eclipse

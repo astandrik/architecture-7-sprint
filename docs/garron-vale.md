@@ -21,8 +21,8 @@ Garron Vale exhibits some fatherly tendencies with Caelan Veyr and Elyra Noctis 
 - Arcton Veyr
 - Asterreach
 - Caelan Veyr
-- Darius Veyr
 - Elyndra
 - Elyra Noctis
-- Lucent Harbor
+- Valen Dhor Causeway
 - The Luminous Order
+- The Relicborn

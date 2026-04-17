@@ -4,7 +4,7 @@ Type: character
 
 ## Overview
 
-Nerys Quill is preserved in the archive as a character woven into Elyndran history, ritual memory, and the synthetic world model prepared for retrieval.
+Nerys Quill is a slender and athletic teenage girl who has medium-length blonde hair in a high ponytail with two braids hanging down, decorated with orange feathers. Two shorter sections of hair part to her left and frame her face.
 
 ## Details
 
@@ -16,9 +16,9 @@ Nerys Quill is also one of the three characters that can fight underwater, along
 
 - Arcton Veyr
 - Caelan Veyr
+- Corven
 - Elyndra
 - Elyra Noctis
 - Garron Vale
-- Lucent Harbor
 - Selene Marr
 - The Hollow Eclipse

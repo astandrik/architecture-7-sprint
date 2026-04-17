@@ -4,7 +4,7 @@ Type: concept
 
 ## Overview
 
-Skyball is preserved in the archive as a concept woven into Elyndran history, ritual memory, and the synthetic world model prepared for retrieval.
+Skyball is held in open-air water sphere stadium, designed in a traditional amphitheatre style. Once the sphere is filled, a pair of triangular goals are suspended at opposing points within the sphere's diameter (usually at the north and south horizontal points).
 
 ## Details
 
@@ -20,9 +20,7 @@ There is only one five-minute round, with no break or half time.
 
 - Asterreach
 - Caelan Veyr
-- Darius Veyr
 - Elyndra
-- Lucent Harbor
 - The Hollow Eclipse
 - The Wardens of Dawn
 - Torren Kaid

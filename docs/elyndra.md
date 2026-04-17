@@ -4,7 +4,7 @@ Type: location
 
 ## Overview
 
-Elyndra is preserved in the archive as a location woven into Elyndran history, ritual memory, and the synthetic world model prepared for retrieval.
+Another form of occupation is in voluntary work, such as the invoker / oathsworn pilgrimages and various religious temple work.
 
 ## Details
 
@@ -20,9 +20,9 @@ The teachings of The Luminous Order, said to have been left by Asterreach's lead
 
 - Asterreach
 - Caelan Veyr
+- Ashen Plains
 - Elyra Noctis
 - Garron Vale
 - Last Invocation
-- Lucent Harbor
+- Valen Dhor Causeway
 - Mount Kaelorn
-- The Hollow Eclipse

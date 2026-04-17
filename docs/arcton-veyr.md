@@ -14,7 +14,7 @@ Arcton Veyr was a kind, cheerful man, desiring peace and unity and willing to sa
 
 ## Related entities
 
-- Darius Veyr
+- Corven
 - Elyndra
 - Elyra Noctis
 - Garron Vale

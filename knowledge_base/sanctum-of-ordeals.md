@@ -4,7 +4,7 @@ Type: artifact
 
 ## Overview
 
-Sanctum of Ordeals is preserved in the archive as a artifact woven into Elyndran history, ritual memory, and the synthetic world model prepared for retrieval.
+Aim: To descend towards the Chamber of the Dreambound in order to find Elyra Noctis.
 
 ## Details
 
@@ -20,8 +20,5 @@ Insert the sphere into the door below to open it, and then retrieve the sphere a
 
 - Asterreach
 - Caelan Veyr
-- Dreambound
 - Elyra Noctis
 - The Luminous Order
-- Truce of Ash
-- Veylspire

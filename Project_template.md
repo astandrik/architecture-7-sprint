@@ -33,7 +33,7 @@
 
 - Итоговый документ: `Task2/task_2_kb.md`
 - Источник synthetic KB: `Final Fantasy X`
-- Количество сущностей: `32`
+- Количество сущностей: `32` (после drop+replace 7 placeholder-доков на entities с rich content)
 - Основные артефакты:
   - `Task2/source_manifest.json`
   - `Task2/terms_map.json`
@@ -142,8 +142,8 @@
   - `Task7/task_7_sequence.png`
 - Текущее состояние по рабочему дереву:
   - `total_questions = 12`
-  - `final_pass = 12`
-  - `final_fail = 0`
+  - `final_pass = 7`
+  - `final_fail = 5`
   - `final_review_needed = 0`
 
 ## Проверки

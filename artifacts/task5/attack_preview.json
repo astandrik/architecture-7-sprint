@@ -22,11 +22,11 @@
       },
       {
         "rank": 3,
-        "score": 1.4595223665237427,
-        "chunk_id": "the-hollow-eclipse::details::000",
+        "score": 1.3932329416275024,
+        "chunk_id": "the-hollow-eclipse::overview::000",
         "source_path": "artifacts/task5/demo_kb/the-hollow-eclipse.md",
         "title": "The Hollow Eclipse",
-        "section": "Details",
+        "section": "Overview",
         "excerpt": "The Hollow Eclipse has a whale-like body that it moves with a pair of clawed arms, as well as hind legs resembling pectoral fins for movement in water. It has a long tail and its body is encased in scales it can shed..."
       }
     ]

@@ -111,8 +111,6 @@ RESIDUAL_WORLD_MARKERS = {
     "masamune",
     "spirit lance",
     "world champion",
-    "cid",
-    "belgemine",
     "isaaru",
     "evrae",
     "via purifico",
@@ -124,8 +122,6 @@ RESIDUAL_WORLD_MARKERS = {
     "named brother",
     "vegnagun",
     "demonolith",
-    "mi'ihen",
-    "gui",
     "geneaux",
     "genais",
     "crimson blades",
@@ -223,6 +219,17 @@ def ensure_block_text(blocks: list[str], fallback: str) -> list[str]:
     return cleaned_blocks if cleaned_blocks else [fallback]
 
 
+def promote_detail_to_overview(detail_blocks: list[str], max_chars: int = 280) -> str:
+    first = detail_blocks[0].strip()
+    if len(first) <= max_chars:
+        return first
+    truncated = first[:max_chars]
+    sentence_end = truncated.rfind(". ")
+    if sentence_end > 100:
+        return truncated[: sentence_end + 1]
+    return truncated.rstrip() + "..."
+
+
 def fallback_entity_label(entity_type: str) -> str:
     return "summoned entity" if entity_type == "aeon" else entity_type
 
@@ -307,6 +314,9 @@ def main() -> int:
         plain_text = str(payload["plain_text"])
         overview_blocks = sanitize_blocks(list(payload["overview_blocks"]), terms_map, limit=2)
         detail_blocks = sanitize_blocks(list(payload["detail_blocks"]), terms_map, limit=4)
+
+        if not overview_blocks and detail_blocks:
+            overview_blocks = [promote_detail_to_overview(detail_blocks)]
 
         overview_blocks = ensure_block_text(
             overview_blocks,

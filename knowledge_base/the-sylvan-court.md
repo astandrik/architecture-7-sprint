@@ -4,7 +4,7 @@ Type: faction
 
 ## Overview
 
-The Sylvan Court is preserved in the archive as a faction woven into Elyndran history, ritual memory, and the synthetic world model prepared for retrieval.
+The Sylvan Court have a religious culture, which causes them to come across as arrogant. Their role as oathsworn of the Veilward have led to them looking down upon other races.
 
 ## Details
 
@@ -15,4 +15,3 @@ The Sylvan Court have a religious culture, which causes them to come across as a
 - Elyndra
 - Elyra Noctis
 - The Luminous Order
-- Veilward

@@ -21,6 +21,13 @@
     "synthetic_slug": "aurelion"
   },
   {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Belgemine",
+    "source_title": "Belgemine",
+    "entity_type": "character",
+    "synthetic_title": "Serem Vale",
+    "synthetic_slug": "belgemine"
+  },
+  {
     "source_url": "https://finalfantasy.fandom.com/wiki/Tidus",
     "source_title": "Tidus",
     "entity_type": "character",
@@ -28,25 +35,18 @@
     "synthetic_slug": "caelan-veyr"
   },
   {
-    "source_url": "https://finalfantasy.fandom.com/wiki/Shiva_(Final_Fantasy_X)",
-    "source_title": "Shiva",
-    "entity_type": "aeon",
-    "synthetic_title": "Cyralith",
-    "synthetic_slug": "cyralith"
+    "source_url": "https://finalfantasy.fandom.com/wiki/Calm_Lands",
+    "source_title": "Calm Lands",
+    "entity_type": "location",
+    "synthetic_title": "Ashen Plains",
+    "synthetic_slug": "calm-lands"
   },
   {
-    "source_url": "https://finalfantasy.fandom.com/wiki/Jecht",
-    "source_title": "Jecht",
+    "source_url": "https://finalfantasy.fandom.com/wiki/Cid_(Final_Fantasy_X)",
+    "source_title": "Cid",
     "entity_type": "character",
-    "synthetic_title": "Darius Veyr",
-    "synthetic_slug": "darius-veyr"
-  },
-  {
-    "source_url": "https://finalfantasy.fandom.com/wiki/Fayth",
-    "source_title": "Fayth",
-    "entity_type": "concept",
-    "synthetic_title": "Dreambound",
-    "synthetic_slug": "dreambound"
+    "synthetic_title": "Corven",
+    "synthetic_slug": "cid"
   },
   {
     "source_url": "https://finalfantasy.fandom.com/wiki/Spira",
@@ -91,18 +91,18 @@
     "synthetic_slug": "last-invocation"
   },
   {
-    "source_url": "https://finalfantasy.fandom.com/wiki/Luca",
-    "source_title": "Luca",
-    "entity_type": "location",
-    "synthetic_title": "Lucent Harbor",
-    "synthetic_slug": "lucent-harbor"
-  },
-  {
     "source_url": "https://finalfantasy.fandom.com/wiki/Seymour_Guado",
     "source_title": "Seymour Guado",
     "entity_type": "character",
     "synthetic_title": "Maelor Voss",
     "synthetic_slug": "maelor-voss"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Mi%27ihen_Highroad",
+    "source_title": "Mi'ihen Highroad",
+    "entity_type": "location",
+    "synthetic_title": "Valen Dhor Causeway",
+    "synthetic_slug": "miihen-highroad"
   },
   {
     "source_url": "https://finalfantasy.fandom.com/wiki/Mt._Gagazet",
@@ -138,6 +138,13 @@
     "entity_type": "character",
     "synthetic_title": "Selene Marr",
     "synthetic_slug": "selene-marr"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Ronso",
+    "source_title": "Ronso",
+    "entity_type": "species",
+    "synthetic_title": "Rhunari",
+    "synthetic_slug": "ronso"
   },
   {
     "source_url": "https://finalfantasy.fandom.com/wiki/Blitzball",
@@ -196,31 +203,24 @@
     "synthetic_slug": "torren-kaid"
   },
   {
-    "source_url": "https://finalfantasy.fandom.com/wiki/Calm_(Final_Fantasy_X)",
-    "source_title": "Calm",
-    "entity_type": "concept",
-    "synthetic_title": "Truce of Ash",
-    "synthetic_slug": "truce-of-ash"
-  },
-  {
-    "source_url": "https://finalfantasy.fandom.com/wiki/Farplane_(Final_Fantasy_X)",
-    "source_title": "Farplane",
-    "entity_type": "concept",
-    "synthetic_title": "Veilward",
-    "synthetic_slug": "veilward"
-  },
-  {
-    "source_url": "https://finalfantasy.fandom.com/wiki/Bevelle",
-    "source_title": "Bevelle",
-    "entity_type": "location",
-    "synthetic_title": "Veylspire",
-    "synthetic_slug": "veylspire"
-  },
-  {
     "source_url": "https://finalfantasy.fandom.com/wiki/Ixion_(Final_Fantasy_X)",
     "source_title": "Ixion",
     "entity_type": "aeon",
     "synthetic_title": "Voltaris",
     "synthetic_slug": "voltaris"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Magus_Sisters_(Final_Fantasy_X)",
+    "source_title": "Magus Sisters",
+    "entity_type": "aeon",
+    "synthetic_title": "Sisters of the Eidolons",
+    "synthetic_slug": "magus-sisters"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Yunalesca",
+    "source_title": "Yunalesca",
+    "entity_type": "character",
+    "synthetic_title": "Velisara",
+    "synthetic_slug": "yunalesca"
   }
 ]

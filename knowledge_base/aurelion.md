@@ -12,11 +12,9 @@ Recovered notes about Aurelion remain fragmentary, yet the surviving records sti
 
 ## Related entities
 
+- Serem Vale
 - Caelan Veyr
-- Cyralith
-- Dreambound
 - Elyra Noctis
 - Sanctum of Ordeals
 - The Hollow Eclipse
 - The Luminous Order
-- Veylspire

@@ -12,9 +12,9 @@ As a half-The Sylvan Court, Maelor's fingers are more pointed than a human's, bu
 
 Maelor believes, as many do, that The Hollow Eclipse is eternal and sees death as a release from the sorrow of life. Maelor appears courteous and affable and is popular among Luminous faithful.
 
-The staff that Maelor wields has a unique model. It is simply named Maelor Staff and has the Piercing ability. He also wears a unique piece of armor around his right ankle, simply named Maelor Armor, which has the Sensor ability.
+Maelor temporarily joins Elyra Noctis and Garron Vale as a guest during the battle against Eclipseborn Gloamheart in Operation Dawnfall. Though he can gain sphere levels, he is never controllable again after the battle.
 
-Maelor relies on casting elemental magic and using combo attacks with whichever form of the Mortibody he has with him. He will Banish any eidolon summoned after one turn in the second and third fights and dispel the party all at once in the second, third, and fourth fights.
+The staff that Maelor wields has a unique model. It is simply named Maelor Staff and has the Piercing ability. He also wears a unique piece of armor around his right ankle, simply named Maelor Armor, which has the Sensor ability.
 
 ## Related entities
 
@@ -25,4 +25,3 @@ Maelor relies on casting elemental magic and using combo attacks with whichever 
 - The Hollow Eclipse
 - The Luminous Order
 - The Sylvan Court
-- Veilward

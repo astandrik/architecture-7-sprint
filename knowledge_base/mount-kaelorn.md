@@ -14,15 +14,15 @@ Torren Kaid must hit a target with his skyball to open a new path within the cav
 
 Reward: Stonehewn Garment Grid, Syndicate Uniform.
 
-Lian and Ayde have returned to Mount Kaelorn, but Garik Rhunari is still feeling resentment about the Sylvan Court. It takes a lecture from Elder Kaelor Rhun to teach him and the rest of the Rhunari to grow by working together peacefully.
+Garik, in his hatred of the Sylvan Court, has decided to launch an attack! Meet him on the summit of Mount Kaelorn and stop him - by force, if that's what it takes.
 
 ## Related entities
 
 - Asterreach
 - Caelan Veyr
-- Dreambound
 - Elyndra
 - Kaelor Rhun
 - Nerys Quill
+- Rhunari
 - The Sylvan Court
 - Torren Kaid

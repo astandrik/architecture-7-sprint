@@ -4,7 +4,7 @@ Type: character
 
 ## Overview
 
-Elyra Noctis is preserved in the archive as a character woven into Elyndran history, ritual memory, and the synthetic world model prepared for retrieval.
+Elyra Noctis has shoulder-length brunette hair. She wears a blue-beaded earring on her right ear, hidden by a lock of her hair, woven into blue beads with gold rings around the larger, middle bead.
 
 ## Details
 
@@ -20,7 +20,7 @@ Elyra Noctis is a talented invoker despite her youth, besting her more experienc
 - Caelan Veyr
 - Elyndra
 - Garron Vale
-- Lucent Harbor
 - Mount Kaelorn
 - Nerys Quill
 - The Hollow Eclipse
+- The Luminous Order
