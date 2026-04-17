@@ -66,7 +66,7 @@
   - chunk size: `220`
   - chunk overlap: `40`
   - chunks count: `69`
-  - build seconds: `11.385`
+  - build seconds: `10.659`
 
 ## Задание 4. RAG-бот
 
