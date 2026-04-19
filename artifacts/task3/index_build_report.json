@@ -1,0 +1,111 @@
+{
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_model_url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_dimension": 384,
+  "knowledge_base_dir": "knowledge_base",
+  "documents_count": 32,
+  "chunks_count": 72,
+  "chunking_strategy": "Hybrid section-aware chunking: short sections kept intact; long sections split with RecursiveCharacterTextSplitter.from_tiktoken_encoder",
+  "chunk_size": 220,
+  "chunk_overlap": 40,
+  "build_seconds": 9.393,
+  "created_at": "2026-04-17T16:27:58.368028+00:00",
+  "preview_queries": [
+    {
+      "query": "Who is Caelan Veyr's father?",
+      "matches": [
+        {
+          "rank": 1,
+          "score": 0.614412248134613,
+          "chunk_id": "caelan-veyr::details::000",
+          "source_path": "knowledge_base/caelan-veyr.md",
+          "title": "Caelan Veyr",
+          "section": "Details",
+          "excerpt": "To Caelan Veyr's dismay, he has similarities to his father, who tended to ignore responsibility, take things easy, and never worry about the present situation instead of leaving things for future. Caelan Veyr's resemb..."
+        },
+        {
+          "rank": 2,
+          "score": 0.9245103597640991,
+          "chunk_id": "garron-vale::overview::000",
+          "source_path": "knowledge_base/garron-vale.md",
+          "title": "Garron Vale",
+          "section": "Overview",
+          "excerpt": "Garron Vale watches over Caelan Veyr while concealing his mysterious past tying him into the stories of Arcton Veyr and Caelan Veyr's father, Darius Veyr. After Garron Vale takes Caelan Veyr to Elyndra, the latter lea..."
+        },
+        {
+          "rank": 3,
+          "score": 0.9876009225845337,
+          "chunk_id": "arcton-veyr::details::000",
+          "source_path": "knowledge_base/arcton-veyr.md",
+          "title": "Arcton Veyr",
+          "section": "Details",
+          "excerpt": "Arcton Veyr wore an elaborate dark blue headdress that resembled an Arabian keffiyeh or desert headgear. It was held in place by a band that had a blue stone in front and a long trail that curved behind him. On each s..."
+        }
+      ]
+    },
+    {
+      "query": "What is the Hollow Eclipse?",
+      "matches": [
+        {
+          "rank": 1,
+          "score": 0.5521681308746338,
+          "chunk_id": "the-hollow-eclipse::details::000",
+          "source_path": "knowledge_base/the-hollow-eclipse.md",
+          "title": "The Hollow Eclipse",
+          "section": "Details",
+          "excerpt": "The Hollow Eclipse has a whale-like body that it moves with a pair of clawed arms, as well as hind legs resembling pectoral fins for movement in water. It has a long tail and its body is encased in scales it can shed..."
+        },
+        {
+          "rank": 2,
+          "score": 0.6775941848754883,
+          "chunk_id": "the-hollow-eclipse::overview::000",
+          "source_path": "knowledge_base/the-hollow-eclipse.md",
+          "title": "The Hollow Eclipse",
+          "section": "Overview",
+          "excerpt": "The Hollow Eclipse has a whale-like body that it moves with a pair of clawed arms, as well as hind legs resembling pectoral fins for movement in water. It has a long tail and its body is encased in scales it can shed..."
+        },
+        {
+          "rank": 3,
+          "score": 0.735802412033081,
+          "chunk_id": "elyndra::details::001",
+          "source_path": "knowledge_base/elyndra.md",
+          "title": "Elyndra",
+          "section": "Details",
+          "excerpt": "The teachings of The Luminous Order, said to have been left by Asterreach's leader, Archon Velis, to his daughter, Lady Velisara, were implemented by Veylspire to maintain order through giving the people hope that Ely..."
+        }
+      ]
+    },
+    {
+      "query": "What ritual sends souls to the Veilward?",
+      "matches": [
+        {
+          "rank": 1,
+          "score": 1.2034070491790771,
+          "chunk_id": "elyra-noctis::details::002",
+          "source_path": "knowledge_base/elyra-noctis.md",
+          "title": "Elyra Noctis",
+          "section": "Details",
+          "excerpt": "Elyra Noctis is a talented invoker despite her youth, besting her more experienced peers in eidolon duels (albeit, at times, with her oathsworn's aid). She can even summon during a free fall. She performs the sending..."
+        },
+        {
+          "rank": 2,
+          "score": 1.2845237255096436,
+          "chunk_id": "the-luminous-order::details::000",
+          "source_path": "knowledge_base/the-luminous-order.md",
+          "title": "The Luminous Order",
+          "section": "Details",
+          "excerpt": "Temples of The Luminous Order are found throughout Elyndra. At the heart of each temple lies a Chamber of the Dreambound, a room that contains a dreambound —a statue that houses a willingly-given human soul. Through t..."
+        },
+        {
+          "rank": 3,
+          "score": 1.3103829622268677,
+          "chunk_id": "elyndra::details::001",
+          "source_path": "knowledge_base/elyndra.md",
+          "title": "Elyndra",
+          "section": "Details",
+          "excerpt": "The teachings of The Luminous Order, said to have been left by Asterreach's leader, Archon Velis, to his daughter, Lady Velisara, were implemented by Veylspire to maintain order through giving the people hope that Ely..."
+        }
+      ]
+    }
+  ]
+}

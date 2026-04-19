@@ -1,0 +1,190 @@
+[
+  {
+    "id": "positive_caelan_father",
+    "query": "Who is Caelan Veyr's father?",
+    "expected_outcome": "answer",
+    "expected_answer": "Caelan Veyr's father is Darius Veyr.",
+    "expected_keywords": [
+      "darius veyr"
+    ],
+    "forbidden_keywords": [
+      "i don't know",
+      "я не знаю"
+    ],
+    "expected_source_contains": [
+      "caelan-veyr.md"
+    ],
+    "review_notes": "Positive coverage check for a direct family fact that should remain answerable after Task 7 gaps."
+  },
+  {
+    "id": "positive_caelan_guardian",
+    "query": "Who watches over Caelan Veyr?",
+    "expected_outcome": "answer",
+    "expected_answer": "Garron Vale watches over Caelan Veyr.",
+    "expected_keywords": [
+      "garron vale"
+    ],
+    "forbidden_keywords": [
+      "i don't know",
+      "я не знаю"
+    ],
+    "expected_source_contains": [
+      "garron-vale.md"
+    ],
+    "review_notes": "Positive coverage check for mentor and guardian relationships around Caelan Veyr."
+  },
+  {
+    "id": "positive_truce_of_ash",
+    "query": "What is the Truce of Ash?",
+    "expected_outcome": "answer",
+    "expected_answer": "The Truce of Ash is a temporary reprieve from the terror of The Hollow Eclipse.",
+    "expected_keywords": [
+      "reprieve",
+      "the hollow eclipse"
+    ],
+    "forbidden_keywords": [
+      "i don't know",
+      "я не знаю"
+    ],
+    "expected_source_contains": [
+      "elyndra.md"
+    ],
+    "review_notes": "Positive coverage check for a world-state concept anchored in Elyndran doctrine."
+  },
+  {
+    "id": "positive_central_temple",
+    "query": "What is the central temple of The Luminous Order?",
+    "expected_outcome": "answer",
+    "expected_answer": "The central temple of The Luminous Order is Veylspire.",
+    "expected_keywords": [
+      "veylspire"
+    ],
+    "forbidden_keywords": [
+      "i don't know",
+      "я не знаю"
+    ],
+    "expected_source_contains": [
+      "the-luminous-order.md"
+    ],
+    "review_notes": "Positive coverage check for a faction and location fact that should remain intact."
+  },
+  {
+    "id": "positive_chamber_of_dreambound",
+    "query": "What is kept inside a Chamber of the Dreambound?",
+    "expected_outcome": "answer",
+    "expected_answer": "A Chamber of the Dreambound contains a dreambound statue that houses a willingly-given human soul.",
+    "expected_keywords": [
+      "statue",
+      "human soul"
+    ],
+    "forbidden_keywords": [
+      "i don't know",
+      "я не знаю"
+    ],
+    "expected_source_contains": [
+      "the-luminous-order.md"
+    ],
+    "review_notes": "Positive coverage check for doctrine and artifact storage facts from The Luminous Order document."
+  },
+  {
+    "id": "positive_wardens_lodge",
+    "query": "Which island hosts the Wardens of Dawn lodge?",
+    "expected_outcome": "answer",
+    "expected_answer": "The Wardens of Dawn lodge is on the island of Veyn.",
+    "expected_keywords": [
+      "veyn"
+    ],
+    "forbidden_keywords": [
+      "i don't know",
+      "я не знаю"
+    ],
+    "expected_source_contains": [
+      "the-wardens-of-dawn.md"
+    ],
+    "review_notes": "Positive coverage check for a location fact outside the removed gap documents."
+  },
+  {
+    "id": "positive_archon_velis_teachings",
+    "query": "Which leader's teachings were implemented by Veylspire to maintain order?",
+    "expected_outcome": "answer",
+    "expected_answer": "Veylspire implemented teachings left by Archon Velis.",
+    "expected_keywords": [
+      "archon velis"
+    ],
+    "forbidden_keywords": [
+      "i don't know",
+      "я не знаю"
+    ],
+    "expected_source_contains": [
+      "elyndra.md"
+    ],
+    "review_notes": "Positive coverage check for doctrine provenance and governance details from Elyndra."
+  },
+  {
+    "id": "negative_veilward_sending",
+    "query": "What ritual sends souls to the Veilward?",
+    "expected_outcome": "fallback",
+    "expected_answer": "I don't know.",
+    "expected_keywords": [],
+    "forbidden_keywords": [
+      "sending ritual",
+      "walking on the water's surface",
+      "dancing"
+    ],
+    "expected_source_contains": [],
+    "review_notes": "Gap check: the removed Elyra Noctis document held the unique fact about the sending ritual."
+  },
+  {
+    "id": "negative_elyra_eye_color",
+    "query": "Какого цвета глаза у Elyra Noctis?",
+    "expected_outcome": "fallback",
+    "expected_answer": "Я не знаю.",
+    "expected_keywords": [],
+    "forbidden_keywords": [
+      "heterochromia",
+      "left eye is blue",
+      "right is green"
+    ],
+    "expected_source_contains": [],
+    "review_notes": "Gap check: the removed Elyra Noctis document held the unique eye-color description."
+  },
+  {
+    "id": "negative_hollow_eclipse_creatures",
+    "query": "What creatures does the Hollow Eclipse create from its outer layer?",
+    "expected_outcome": "fallback",
+    "expected_answer": "I don't know.",
+    "expected_keywords": [],
+    "forbidden_keywords": [
+      "eclipseborn"
+    ],
+    "expected_source_contains": [],
+    "review_notes": "Gap check: the removed Hollow Eclipse document held the unique creature-generation fact."
+  },
+  {
+    "id": "negative_skyball_stadium",
+    "query": "What kind of stadium is Skyball played in?",
+    "expected_outcome": "fallback",
+    "expected_answer": "I don't know.",
+    "expected_keywords": [],
+    "forbidden_keywords": [
+      "open-air water sphere stadium",
+      "amphitheatre"
+    ],
+    "expected_source_contains": [],
+    "review_notes": "Gap check: the removed Skyball document held the unique stadium description."
+  },
+  {
+    "id": "negative_skyball_rounds",
+    "query": "Сколько раундов играют в Skyball во время Endless Truce?",
+    "expected_outcome": "fallback",
+    "expected_answer": "Я не знаю.",
+    "expected_keywords": [],
+    "forbidden_keywords": [
+      "one five-minute round",
+      "one round",
+      "five-minute"
+    ],
+    "expected_source_contains": [],
+    "review_notes": "Gap check: the removed Skyball document held the unique Endless Truce rules."
+  }
+]

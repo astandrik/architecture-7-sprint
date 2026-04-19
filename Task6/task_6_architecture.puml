@@ -1,0 +1,24 @@
+@startuml
+title Task 6 Daily KB Update Pipeline
+
+actor Cron as cron
+folder "docs/" as docs
+component "scripts/update_index.py" as updater
+file "artifacts/task6/update_state.json\n(optional on first successful run)" as state
+folder "knowledge_base/" as kb
+component "Task 3 build_index_artifacts()" as indexer
+folder "artifacts/task3/\nFAISS index + chunks + report" as task3artifacts
+file "artifacts/task6/update_log.jsonl" as logjsonl
+file "artifacts/task6/cron_stdout.log" as cronlog
+
+cron --> updater : daily at 06:00
+docs --> updater : scan *.md + sha256
+state --> updater : previous file manifest\nif present
+updater --> kb : copy new/changed\nremove deleted
+updater --> indexer : full rebuild when changes exist
+indexer --> task3artifacts : save index artifacts
+updater --> state : save new successful state
+updater --> logjsonl : append run log entry
+cron --> cronlog : stdout/stderr redirect
+
+@enduml

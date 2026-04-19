@@ -1,0 +1,42 @@
+@startuml
+title Task 7 Coverage Evaluation Flow
+
+actor "Golden Question Set" as golden
+component "scripts/evaluate_task7.py" as evaluator
+file "Task7/golden_questions.json" as goldenfile
+file "Task7/golden_questions.txt" as goldentxt
+file "artifacts/task7/gap_manifest.json" as gapmanifest
+component "RagBot" as ragbot
+database "FAISS eval index" as faiss
+component "Rule-based evaluator" as rules
+component "Judge model\nOllama qwen2.5:7b-instruct" as judge
+file "artifacts/task7/logs.jsonl" as logs
+file "artifacts/task7/eval_summary.json" as summary
+file "artifacts/task7/manual_review.md" as review
+file "Task7/task_7_coverage.md" as coverage
+
+golden -> evaluator : iterate questions
+goldenfile --> evaluator : load golden set\n(query, expected_outcome,\nexpected_answer, keywords,\nsources, review notes)
+gapmanifest --> evaluator : load removed docs metadata
+evaluator -> ragbot : answer_question(query)
+ragbot -> faiss : similarity search
+faiss --> ragbot : retrieved chunks
+ragbot --> evaluator : RagAnswer
+evaluator -> rules : evaluate(question, answer)
+rules --> evaluator : pass / fail / review_needed
+
+evaluator -> judge : review_needed only
+judge --> evaluator : pass / fail / review_needed / unavailable
+
+evaluator --> logs : append raw evaluation entry
+evaluator --> summary : write aggregate metrics
+evaluator --> review : write unresolved review queue
+evaluator --> coverage : write coverage report
+
+note right of goldentxt
+Human-readable golden-set deliverable
+for submission and manual review.
+Not consumed at runtime.
+end note
+
+@enduml

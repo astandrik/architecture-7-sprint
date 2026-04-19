@@ -1,0 +1,226 @@
+[
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Lord_Braska",
+    "source_title": "Braska",
+    "entity_type": "character",
+    "synthetic_title": "Arcton Veyr",
+    "synthetic_slug": "arcton-veyr"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Zanarkand",
+    "source_title": "Zanarkand",
+    "entity_type": "location",
+    "synthetic_title": "Asterreach",
+    "synthetic_slug": "asterreach"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Valefor_(Final_Fantasy_X)",
+    "source_title": "Valefor",
+    "entity_type": "aeon",
+    "synthetic_title": "Aurelion",
+    "synthetic_slug": "aurelion"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Belgemine",
+    "source_title": "Belgemine",
+    "entity_type": "character",
+    "synthetic_title": "Serem Vale",
+    "synthetic_slug": "belgemine"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Tidus",
+    "source_title": "Tidus",
+    "entity_type": "character",
+    "synthetic_title": "Caelan Veyr",
+    "synthetic_slug": "caelan-veyr"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Calm_Lands",
+    "source_title": "Calm Lands",
+    "entity_type": "location",
+    "synthetic_title": "Ashen Plains",
+    "synthetic_slug": "calm-lands"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Cid_(Final_Fantasy_X)",
+    "source_title": "Cid",
+    "entity_type": "character",
+    "synthetic_title": "Corven",
+    "synthetic_slug": "cid"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Spira",
+    "source_title": "Spira",
+    "entity_type": "location",
+    "synthetic_title": "Elyndra",
+    "synthetic_slug": "elyndra"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Yuna",
+    "source_title": "Yuna",
+    "entity_type": "character",
+    "synthetic_title": "Elyra Noctis",
+    "synthetic_slug": "elyra-noctis"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Auron",
+    "source_title": "Auron",
+    "entity_type": "character",
+    "synthetic_title": "Garron Vale",
+    "synthetic_slug": "garron-vale"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Besaid_Island",
+    "source_title": "Besaid Island",
+    "entity_type": "location",
+    "synthetic_title": "Isola Veyn",
+    "synthetic_slug": "isola-veyn"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Kimahri_Ronso",
+    "source_title": "Kimahri Ronso",
+    "entity_type": "character",
+    "synthetic_title": "Kaelor Rhun",
+    "synthetic_slug": "kaelor-rhun"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Final_Summoning",
+    "source_title": "Final Summoning",
+    "entity_type": "event",
+    "synthetic_title": "Last Invocation",
+    "synthetic_slug": "last-invocation"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Seymour_Guado",
+    "source_title": "Seymour Guado",
+    "entity_type": "character",
+    "synthetic_title": "Maelor Voss",
+    "synthetic_slug": "maelor-voss"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Mi%27ihen_Highroad",
+    "source_title": "Mi'ihen Highroad",
+    "entity_type": "location",
+    "synthetic_title": "Valen Dhor Causeway",
+    "synthetic_slug": "miihen-highroad"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Mt._Gagazet",
+    "source_title": "Mt. Gagazet",
+    "entity_type": "location",
+    "synthetic_title": "Mount Kaelorn",
+    "synthetic_slug": "mount-kaelorn"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Rikku",
+    "source_title": "Rikku",
+    "entity_type": "character",
+    "synthetic_title": "Nerys Quill",
+    "synthetic_slug": "nerys-quill"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Ifrit_(Final_Fantasy_X)",
+    "source_title": "Ifrit",
+    "entity_type": "aeon",
+    "synthetic_title": "Pyrakar",
+    "synthetic_slug": "pyrakar"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Cloister_of_Trials_(Final_Fantasy_X)",
+    "source_title": "Cloister of Trials",
+    "entity_type": "artifact",
+    "synthetic_title": "Sanctum of Ordeals",
+    "synthetic_slug": "sanctum-of-ordeals"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Lulu",
+    "source_title": "Lulu",
+    "entity_type": "character",
+    "synthetic_title": "Selene Marr",
+    "synthetic_slug": "selene-marr"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Ronso",
+    "source_title": "Ronso",
+    "entity_type": "species",
+    "synthetic_title": "Rhunari",
+    "synthetic_slug": "ronso"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Blitzball",
+    "source_title": "Blitzball",
+    "entity_type": "concept",
+    "synthetic_title": "Skyball",
+    "synthetic_slug": "skyball"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Bahamut_(Final_Fantasy_X)",
+    "source_title": "Bahamut",
+    "entity_type": "aeon",
+    "synthetic_title": "Starfang",
+    "synthetic_slug": "starfang"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Sin_(Final_Fantasy_X)",
+    "source_title": "Sin",
+    "entity_type": "concept",
+    "synthetic_title": "The Hollow Eclipse",
+    "synthetic_slug": "the-hollow-eclipse"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Yevon",
+    "source_title": "Yevon",
+    "entity_type": "faction",
+    "synthetic_title": "The Luminous Order",
+    "synthetic_slug": "the-luminous-order"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Al_Bhed",
+    "source_title": "Al Bhed",
+    "entity_type": "faction",
+    "synthetic_title": "The Relicborn",
+    "synthetic_slug": "the-relicborn"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Guado",
+    "source_title": "Guado",
+    "entity_type": "faction",
+    "synthetic_title": "The Sylvan Court",
+    "synthetic_slug": "the-sylvan-court"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Crusaders",
+    "source_title": "Crusaders",
+    "entity_type": "faction",
+    "synthetic_title": "The Wardens of Dawn",
+    "synthetic_slug": "the-wardens-of-dawn"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Wakka",
+    "source_title": "Wakka",
+    "entity_type": "character",
+    "synthetic_title": "Torren Kaid",
+    "synthetic_slug": "torren-kaid"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Ixion_(Final_Fantasy_X)",
+    "source_title": "Ixion",
+    "entity_type": "aeon",
+    "synthetic_title": "Voltaris",
+    "synthetic_slug": "voltaris"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Magus_Sisters_(Final_Fantasy_X)",
+    "source_title": "Magus Sisters",
+    "entity_type": "aeon",
+    "synthetic_title": "Sisters of the Eidolons",
+    "synthetic_slug": "magus-sisters"
+  },
+  {
+    "source_url": "https://finalfantasy.fandom.com/wiki/Yunalesca",
+    "source_title": "Yunalesca",
+    "entity_type": "character",
+    "synthetic_title": "Velisara",
+    "synthetic_slug": "yunalesca"
+  }
+]

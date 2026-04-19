@@ -1,0 +1,7 @@
+faiss-cpu==1.13.2
+langchain-community==0.3.31
+langchain-core==0.3.84
+langchain-text-splitters==0.3.11
+requests==2.33.1
+sentence-transformers==3.4.1
+tiktoken==0.12.0

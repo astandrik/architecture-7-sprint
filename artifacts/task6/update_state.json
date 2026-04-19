@@ -1,0 +1,231 @@
+{
+  "source_dir": "/Users/astandrik/workspace/architecture-7-sprint/docs",
+  "kb_dir": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base",
+  "last_successful_run_at": "2026-04-17T16:04:07.538984+00:00",
+  "files": {
+    "arcton-veyr.md": {
+      "relative_path": "arcton-veyr.md",
+      "sha256": "cfa7c6cd450e7c746843042c5da582db88a4a7ef86b2c5b5a5b130e0b3c9fca7",
+      "size_bytes": 1451,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/arcton-veyr.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "asterreach.md": {
+      "relative_path": "asterreach.md",
+      "sha256": "f39644d7294ef2fc0fd2fb70127ab0647e2d358fdc52291da14761534f2ce3fe",
+      "size_bytes": 504,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/asterreach.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "aurelion.md": {
+      "relative_path": "aurelion.md",
+      "sha256": "ee0e74b70c696aa2706487b92306a2959181ac6b6654b873f8bd43389d52bc32",
+      "size_bytes": 595,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/aurelion.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "belgemine.md": {
+      "relative_path": "belgemine.md",
+      "sha256": "7ede45505c4bfe8ebb6c2a1426e54d75409419ab1ba87e80b371ef296941e1a2",
+      "size_bytes": 1795,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/belgemine.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "caelan-veyr.md": {
+      "relative_path": "caelan-veyr.md",
+      "sha256": "be323ac85d972f9bbea7d8c1a0b2ab47a946d65129c1c655deb8d8a08a07f7a9",
+      "size_bytes": 1723,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/caelan-veyr.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "calm-lands.md": {
+      "relative_path": "calm-lands.md",
+      "sha256": "612bc3c2188cdb70f56c140f2b9170ac8a6f5555545825985cf555b01b2ad9ad",
+      "size_bytes": 597,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/calm-lands.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "cid.md": {
+      "relative_path": "cid.md",
+      "sha256": "5e0452a40af40aa06cf12613a78d71ced0a5cf9863e9cb4368c8e6a102e371c1",
+      "size_bytes": 1399,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/cid.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "elyndra.md": {
+      "relative_path": "elyndra.md",
+      "sha256": "756d33445669590d25032a1128e3bd8456e722de9934a8ea967ca45caf7a5e62",
+      "size_bytes": 2108,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/elyndra.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "elyra-noctis.md": {
+      "relative_path": "elyra-noctis.md",
+      "sha256": "959540a222b66d5d29bfbb64f1c4647e9363ec6c4fa29315476c9c3472206ab3",
+      "size_bytes": 2414,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/elyra-noctis.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "garron-vale.md": {
+      "relative_path": "garron-vale.md",
+      "sha256": "7e635a1a989e708926c0d4300b3c2cbbb18fb6290c638d40095f55194709aeb4",
+      "size_bytes": 2889,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/garron-vale.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "isola-veyn.md": {
+      "relative_path": "isola-veyn.md",
+      "sha256": "9aafc490fbffc79d2f67f3c00e0d58f1f21632f13d5fcd2852790d37df16c54e",
+      "size_bytes": 606,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/isola-veyn.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "kaelor-rhun.md": {
+      "relative_path": "kaelor-rhun.md",
+      "sha256": "99daa5e037dc23a663b722f4d6bdec142c236d2e37cee70bc077a997c98eb3a5",
+      "size_bytes": 972,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/kaelor-rhun.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "last-invocation.md": {
+      "relative_path": "last-invocation.md",
+      "sha256": "69d628a1b7cd1698080066e7497b40e2cb82b035909c3e937cd05a5d1a63a839",
+      "size_bytes": 700,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/last-invocation.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "maelor-voss.md": {
+      "relative_path": "maelor-voss.md",
+      "sha256": "90280793e7df2d60dbcc08b628cf28c28a0d4977493488dda373a5a9d6990bb1",
+      "size_bytes": 1690,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/maelor-voss.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "magus-sisters.md": {
+      "relative_path": "magus-sisters.md",
+      "sha256": "e3d437464a4225f80263e89f929f74d80cc09ada064399e00f2e6baecb4c16da",
+      "size_bytes": 2324,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/magus-sisters.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "miihen-highroad.md": {
+      "relative_path": "miihen-highroad.md",
+      "sha256": "184aa75e13514dba3063cfaa2990a2aba3d2aed0711f7331e85aed55ae0e9306",
+      "size_bytes": 507,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/miihen-highroad.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "mount-kaelorn.md": {
+      "relative_path": "mount-kaelorn.md",
+      "sha256": "4b554f231fccd8a92564134cff1db5981da52f9697ab44956ff614c3106a9951",
+      "size_bytes": 951,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/mount-kaelorn.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "nerys-quill.md": {
+      "relative_path": "nerys-quill.md",
+      "sha256": "eda6711946de1dafb01bc9831b96eb8cee83c487892ab88e39af445b379a3774",
+      "size_bytes": 912,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/nerys-quill.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "pyrakar.md": {
+      "relative_path": "pyrakar.md",
+      "sha256": "4dd63ccab4c4ebbdd6d5fb9ec11ef9c934729b4cf610a592a6fa692dd1254015",
+      "size_bytes": 554,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/pyrakar.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "ronso.md": {
+      "relative_path": "ronso.md",
+      "sha256": "c0f3b734b137f7d961ecdae5d3412aaa4454922b26a902bb917d35b8507e7bf3",
+      "size_bytes": 2055,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/ronso.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "sanctum-of-ordeals.md": {
+      "relative_path": "sanctum-of-ordeals.md",
+      "sha256": "617beaba1264ac176da4f679219254df89db07c58076267e1128f67801e09343",
+      "size_bytes": 652,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/sanctum-of-ordeals.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "selene-marr.md": {
+      "relative_path": "selene-marr.md",
+      "sha256": "a5cd21b5f71120d9f11b9d1e121172c7949daf7f347b70f90fd2e780ae747073",
+      "size_bytes": 1892,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/selene-marr.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "skyball.md": {
+      "relative_path": "skyball.md",
+      "sha256": "ed3a988cb7797b023743563347fb9dc562e98b546334a05ca012c31a256a5b2f",
+      "size_bytes": 901,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/skyball.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "starfang.md": {
+      "relative_path": "starfang.md",
+      "sha256": "022e98ea95b8cc0f07017f21d42ded6c174b2dd23454527af2b5cdd9a867ac4b",
+      "size_bytes": 360,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/starfang.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "the-hollow-eclipse.md": {
+      "relative_path": "the-hollow-eclipse.md",
+      "sha256": "5e686e1cd11045461031091ec417e69d0257024a52fa9dab620ddc54d73e9c89",
+      "size_bytes": 1267,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/the-hollow-eclipse.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "the-luminous-order.md": {
+      "relative_path": "the-luminous-order.md",
+      "sha256": "6c315c7031ac8b9964fff53755296e346cd95d25988506dab14220d053cdb171",
+      "size_bytes": 973,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/the-luminous-order.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "the-relicborn.md": {
+      "relative_path": "the-relicborn.md",
+      "sha256": "afdda0ca9a649fed2b93e8938210e1435d2f5c6e6615eaffdbb313baeef6c8d7",
+      "size_bytes": 1422,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/the-relicborn.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "the-sylvan-court.md": {
+      "relative_path": "the-sylvan-court.md",
+      "sha256": "1a54b6d3fa33d5df634ee977606cef089a57614002cb975d89041ea1c80968b2",
+      "size_bytes": 722,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/the-sylvan-court.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "the-wardens-of-dawn.md": {
+      "relative_path": "the-wardens-of-dawn.md",
+      "sha256": "518f081a653c08d9d384ba14d04131564403dc17d286d380ddecd32d69ab88d1",
+      "size_bytes": 679,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/the-wardens-of-dawn.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "torren-kaid.md": {
+      "relative_path": "torren-kaid.md",
+      "sha256": "580f8577aa5bcac8e8a31a3565123c96ec8656a9715362607cf05034374a1780",
+      "size_bytes": 1647,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/torren-kaid.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "voltaris.md": {
+      "relative_path": "voltaris.md",
+      "sha256": "cb964bb38da9f9f89796b6fb5edc8941a2f96a2f9308e273f4ccfb386265ab77",
+      "size_bytes": 508,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/voltaris.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    },
+    "yunalesca.md": {
+      "relative_path": "yunalesca.md",
+      "sha256": "560add071017dae6b929be98dfa731571a886eecafd652e94329322c453e9f3c",
+      "size_bytes": 1363,
+      "synced_to": "/Users/astandrik/workspace/architecture-7-sprint/knowledge_base/yunalesca.md",
+      "last_seen_at": "2026-04-17T16:03:57.796490+00:00"
+    }
+  }
+}

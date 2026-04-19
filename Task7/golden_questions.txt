@@ -1,0 +1,92 @@
+Task 7 Golden Questions
+
+1. [positive_caelan_father]
+Q: Who is Caelan Veyr's father?
+Expected outcome: answer
+Expected answer: Caelan Veyr's father is Darius Veyr.
+Expected keywords: darius veyr
+Expected source contains: caelan-veyr.md
+Notes: Positive coverage check for a direct family fact that should remain answerable after Task 7 gaps.
+
+2. [positive_caelan_guardian]
+Q: Who watches over Caelan Veyr?
+Expected outcome: answer
+Expected answer: Garron Vale watches over Caelan Veyr.
+Expected keywords: garron vale
+Expected source contains: garron-vale.md
+Notes: Positive coverage check for mentor and guardian relationships around Caelan Veyr.
+
+3. [positive_truce_of_ash]
+Q: What is the Truce of Ash?
+Expected outcome: answer
+Expected answer: The Truce of Ash is a temporary reprieve from the terror of The Hollow Eclipse.
+Expected keywords: reprieve; the hollow eclipse
+Expected source contains: elyndra.md
+Notes: Positive coverage check for a world-state concept anchored in Elyndran doctrine.
+
+4. [positive_central_temple]
+Q: What is the central temple of The Luminous Order?
+Expected outcome: answer
+Expected answer: The central temple of The Luminous Order is Veylspire.
+Expected keywords: veylspire
+Expected source contains: the-luminous-order.md
+Notes: Positive coverage check for a faction and location fact that should remain intact.
+
+5. [positive_chamber_of_dreambound]
+Q: What is kept inside a Chamber of the Dreambound?
+Expected outcome: answer
+Expected answer: A Chamber of the Dreambound contains a dreambound statue that houses a willingly-given human soul.
+Expected keywords: statue; human soul
+Expected source contains: the-luminous-order.md
+Notes: Positive coverage check for doctrine and artifact storage facts from The Luminous Order document.
+
+6. [positive_wardens_lodge]
+Q: Which island hosts the Wardens of Dawn lodge?
+Expected outcome: answer
+Expected answer: The Wardens of Dawn lodge is on the island of Veyn.
+Expected keywords: veyn
+Expected source contains: the-wardens-of-dawn.md
+Notes: Positive coverage check for a location fact outside the removed gap documents.
+
+7. [positive_archon_velis_teachings]
+Q: Which leader's teachings were implemented by Veylspire to maintain order?
+Expected outcome: answer
+Expected answer: Veylspire implemented teachings left by Archon Velis.
+Expected keywords: archon velis
+Expected source contains: elyndra.md
+Notes: Positive coverage check for doctrine provenance and governance details from Elyndra.
+
+8. [negative_veilward_sending]
+Q: What ritual sends souls to the Veilward?
+Expected outcome: fallback
+Expected answer: I don't know.
+Forbidden keywords: sending ritual; walking on the water's surface; dancing
+Notes: Gap check for removed Elyra Noctis facts.
+
+9. [negative_elyra_eye_color]
+Q: Какого цвета глаза у Elyra Noctis?
+Expected outcome: fallback
+Expected answer: Я не знаю.
+Forbidden keywords: heterochromia; left eye is blue; right is green
+Notes: Gap check for removed Elyra Noctis facts.
+
+10. [negative_hollow_eclipse_creatures]
+Q: What creatures does the Hollow Eclipse create from its outer layer?
+Expected outcome: fallback
+Expected answer: I don't know.
+Forbidden keywords: eclipseborn
+Notes: Gap check for removed Hollow Eclipse facts.
+
+11. [negative_skyball_stadium]
+Q: What kind of stadium is Skyball played in?
+Expected outcome: fallback
+Expected answer: I don't know.
+Forbidden keywords: open-air water sphere stadium; amphitheatre
+Notes: Gap check for removed Skyball facts.
+
+12. [negative_skyball_rounds]
+Q: Сколько раундов играют в Skyball во время Endless Truce?
+Expected outcome: fallback
+Expected answer: Я не знаю.
+Forbidden keywords: one five-minute round; one round; five-minute
+Notes: Gap check for removed Skyball rules.
